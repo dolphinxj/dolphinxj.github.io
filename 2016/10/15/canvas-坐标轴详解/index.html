@@ -1,165 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-    
-        <meta name="description" content="">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="徐 静">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="canvas 坐标轴详解--折线图"/>
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Wellcome"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>canvas 坐标轴详解--折线图 - Wellcome</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
-
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>canvas 坐标轴详解--折线图 | Wellcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="canvas 坐标轴详解--折线图">
+<meta property="og:url" content="http://yoursite.com/2016/10/15/canvas-坐标轴详解/index.html">
+<meta property="og:site_name" content="Wellcome">
+<meta property="og:image" content="http://yoursite.com/1.jpg">
+<meta property="og:updated_time" content="2016-11-07T11:54:26.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas 坐标轴详解--折线图">
+<meta name="twitter:image" content="http://yoursite.com/1.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Wellcome" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
 
 </head>
 
-
 <body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="null" class="js-avatar">
+			
+		</a>
 
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Configurable Title</a>
-        </div>
+		<hgroup>
+		  <h1 class="header-author"><a href="/">徐 静</a></h1>
+		</hgroup>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="/">
-                            
-                                Home
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
     </div>
-    <!-- /.container -->
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">徐 静</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="null" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">徐 静</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
 </nav>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+      <div class="body-wrap">
+        <article id="post-canvas-坐标轴详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas 坐标轴详解--折线图
+    </h1>
+  
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>canvas 坐标轴详解--折线图</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-10-15
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
-            
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <excerpt in="" index="" |="" 首页摘要="">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <excerpt in="" index="" |="" 首页摘要="">
 
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -167,75 +166,231 @@
 <h2 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h2><p><img src="1.jpg" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	function Line(config) &#123;</div><div class="line">		// 过滤参数</div><div class="line">		if( !config.target || !config.data )&#123;</div><div class="line">			console.warn(&apos;参数异常.&apos;);</div><div class="line">			return this;</div><div class="line">		&#125;</div><div class="line">		// 将line的配置属性添加到 this 上， 方便使用。</div><div class="line">		this.target = config.target;</div><div class="line">		this.data = config.data;</div><div class="line">		// 对原数据按照x进行排序 - 升序</div><div class="line">		this.data.sort(function(a, b) &#123;</div><div class="line">			return a[0] - b[0];</div><div class="line">		&#125;);</div><div class="line">		this.width = config.width;</div><div class="line">		this.height = config.height;</div><div class="line">		// 坐标轴相关配置</div><div class="line">		this.axisWidth = config.axisWidth;</div><div class="line">		this.axisColor = config.axisColor;</div><div class="line">		this.arrowHeight = config.arrowHeight;</div><div class="line">		this.arrowWidth = config.arrowWidth;			</div><div class="line">		this.arrowColor = config.arrowColor;</div><div class="line">		this.axisMargin = config.axisMargin;</div><div class="line">		// 点相关配置</div><div class="line">		this.pointSize = config.pointSize;</div><div class="line">		this.pointColor = config.pointColor;</div><div class="line">		this.pointShape = config.pointShape;</div><div class="line">		// 线相关配置</div><div class="line">		this.lineWidth = config.lineWidth;</div><div class="line">		this.lineColor = config.lineColor;</div><div class="line"></div><div class="line">		// 创建canvas标签</div><div class="line">		var canvas = document.createElement(&apos;canvas&apos;);</div><div class="line">		canvas.width = this.width || 600;</div><div class="line">		canvas.height = this.height || 400;</div><div class="line">		// 将绘图工具保存在this上</div><div class="line">		this.context = canvas.getContext(&apos;2d&apos;);	</div><div class="line">		// 存储坐标轴的最大值</div><div class="line">		this.maxXAxis = canvas.width - 2 * this.axisMargin - this.arrowHeight - this.pointSize;</div><div class="line">		this.maxYAxis = canvas.height - 2 * this.axisMargin - this.arrowHeight - this.pointSize;</div><div class="line">		// 存储数据中x最大值</div><div class="line">		this.maxX = Math.max.apply(null, this.data.map(function(v) &#123;</div><div class="line">			return v[0];</div><div class="line">		&#125;));</div><div class="line">		// 存储数据中y最大值</div><div class="line">		this.maxY = Math.max.apply(null, this.data.map(function(v) &#123;</div><div class="line">			return v[1];</div><div class="line">		&#125;));</div><div class="line">		this.points = [];</div><div class="line">	&#125;</div><div class="line">	Line.prototype = &#123;</div><div class="line">		constructor: Line,</div><div class="line">		renderAxis: function() &#123;</div><div class="line">			var ctx = this.context;</div><div class="line">			var x, y;</div><div class="line">			ctx.beginPath();</div><div class="line">			x = y = this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);</div><div class="line">			y = this.height - this.axisMargin;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = this.width - this.axisMargin</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			ctx.strokeStyle = this.axisColor || &apos;hotpink&apos;;</div><div class="line">			ctx.lineWidth = this.axisWidth || 2;</div><div class="line">			ctx.stroke();</div><div class="line"></div><div class="line">			// 绘制y轴箭头</div><div class="line">			ctx.beginPath();</div><div class="line">			x = y = this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);</div><div class="line">			x = x - this.arrowWidth / 2;</div><div class="line">			y = y + this.arrowHeight;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = this.axisMargin;</div><div class="line">			y = this.axisMargin + this.arrowHeight / 2;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = x + this.arrowWidth / 2;</div><div class="line">			y = y + this.arrowHeight / 2;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			ctx.fillStyle = this.arrowColor || &apos;hotpink&apos;;</div><div class="line">			ctx.fill();</div><div class="line">			</div><div class="line"></div><div class="line">			// 绘制x轴箭头</div><div class="line">			ctx.beginPath();</div><div class="line">			x = this.width - this.axisMargin;</div><div class="line">			y = this.height - this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);		</div><div class="line">			x = x - this.arrowHeight;</div><div class="line">			y = y - this.arrowWidth / 2;				</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			x = x + this.arrowHeight / 2;</div><div class="line">			y = y + this.arrowWidth / 2;</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			x = x - this.arrowHeight / 2;</div><div class="line">			y = y + this.arrowWidth / 2;</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			ctx.fill();</div><div class="line">		&#125;,</div><div class="line">		renderPoints: function() &#123;</div><div class="line">			var ctx = this.context;</div><div class="line">			var x0, y0; // 确定坐标系原点</div><div class="line">			x0 = this.axisMargin;</div><div class="line">			y0 = this.height - this.axisMargin;</div><div class="line">			var point, x, y;</div><div class="line"></div><div class="line">			for(var i = 0, l = this.data.length; i &lt; l; i++)&#123;</div><div class="line">				point = this.data[i];</div><div class="line">				// 坐标点缩放</div><div class="line">				x = point[0] * this.maxXAxis / this.maxX;</div><div class="line">				y = point[1] * this.maxYAxis / this.maxY;</div><div class="line">				// 坐标点变换</div><div class="line">				x = x0 + x;</div><div class="line">				y = y0 - y;</div><div class="line">				this.points.push([x, y]);</div><div class="line"></div><div class="line">				// 用指定的形状描绘点</div><div class="line">				ctx.fillStyle = this.pointColor || &apos;hotpink&apos;;</div><div class="line">				if( this.pointShape === &apos;round&apos;)&#123;</div><div class="line">					ctx.beginPath();</div><div class="line">					ctx.arc(x, y, this.pointSize / 2, 0, 2 * Math.PI);</div><div class="line">					ctx.fill();</div><div class="line">				&#125; else &#123;</div><div class="line">					x = x - this.pointSize / 2;</div><div class="line">					y = y - this.pointSize / 2;</div><div class="line">					ctx.beginPath();						</div><div class="line">					ctx.fillRect(x, y, this.pointSize, this.pointSize);</div><div class="line">				&#125;					</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;,</div><div class="line">		render: function() &#123;</div><div class="line">			var point,</div><div class="line">				ctx = this.context;</div><div class="line">			this.renderAxis();</div><div class="line">			this.renderPoints();</div><div class="line">			// 将变换后的点，进行连线</div><div class="line">			ctx.beginPath();</div><div class="line">			for(var i = 0,l = this.points.length; i &lt; l; i++)&#123;</div><div class="line">				point = this.points[i];					</div><div class="line">				ctx[[&apos;moveTo&apos;, &apos;lineTo&apos;][i === 0 ? 0 : 1]](point[0], point[1]);					</div><div class="line">			&#125;</div><div class="line">			ctx.lineWidth = this.lineWidth || 2;</div><div class="line">			ctx.strokeStyle = this.lineColor || &apos;hotpink&apos;;</div><div class="line">			ctx.stroke();</div><div class="line">			document.querySelector(this.target).appendChild(this.context.canvas);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	var l = new Line(&#123;</div><div class="line">		target: &apos;#chart&apos;, // 指定canvas的父节点</div><div class="line">		width: 600,		  // 指定canvas的宽</div><div class="line">		height: 400,      // 指定canvas的高</div><div class="line">		data: [			  // 绘制折线图的数据</div><div class="line">			[0, 10],</div><div class="line">			[10, 20],</div><div class="line">			[30, 45],</div><div class="line">			[15, 5],</div><div class="line">			[60, 80]</div><div class="line">		],</div><div class="line">		axisWidth: 2,    // 坐标轴的线宽</div><div class="line">		axisColor: &apos;darkblue&apos;, // 坐标轴的颜色</div><div class="line">		arrowHeight: 16,   // 坐标轴箭头的高</div><div class="line">		arrowWidth: 16,   // 坐标轴箭头的宽</div><div class="line">		arrowColor: &apos;darkblue&apos;,  // 坐标轴箭头的填充颜色</div><div class="line">		axisMargin: 20,       // 坐标轴的外边距</div><div class="line">		pointSize: 8,          // 点的大小</div><div class="line">		pointColor: &apos;darkred&apos;, // 点的颜色</div><div class="line">		pointShape: &apos;round&apos;, // &apos;round | square&apos; // 点的形状（圆或方形）</div><div class="line">		lineWidth: 2,          // 折线的线宽</div><div class="line">		lineColor: &apos;darkblue&apos;  // 折线的颜色</div><div class="line">	&#125;);</div><div class="line">	l.render();</div><div class="line">	// var o = &#123;say: function() &#123;&#125;&#125;</div><div class="line">	// o.say();</div><div class="line">	// o[&apos;say&apos;]();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </the></excerpt>
-
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-
-
-                </div>
-            
-        </div>
+      
     </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/15/canvas-坐标轴详解/" class="archive-article-date">
+  	<time datetime="2016-10-15T02:36:19.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-15</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
 </article>
 
-    <!-- Footer -->
-    <hr />
+  
+<nav id="article-nav">
+  
+    <a href="/2016/10/16/canvasimage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          canvasimage
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/14/canvas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Canvas</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
 
-                    
 
-                    
-                        <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
 
-                    
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-                    
 
-                    
-                </ul>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 徐 静
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
+  </div>
 </footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
 
 
-    <!-- After footer scripts -->
     
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/OO/" style="font-size: 10px;">OO</a> <a href="/tags/特性/" style="font-size: 10px;">特性</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+    			</div>
+    	</section>
+    
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
 
-<!-- Disqus Comments -->
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
 
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
 
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
 </body>
-
 </html>
