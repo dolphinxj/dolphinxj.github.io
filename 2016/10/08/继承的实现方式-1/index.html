@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="徐 静">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="继承的实现方式"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Wellcome"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>继承的实现方式 - Wellcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>继承的实现方式</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-08
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <excerpt in="" index="" |="" 首页摘要="">
+
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+
+<h1 id="继承的实现方式"><a href="#继承的实现方式" class="headerlink" title="继承的实现方式"></a>继承的实现方式</h1><h2 id="基于原型"><a href="#基于原型" class="headerlink" title="基于原型"></a>基于原型</h2><p>1.扩展原型：在原有的原型上进行相应的扩展，实现继承。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function A()&#123;&#125;;</div><div class="line">var a = new A;</div><div class="line">A.prototype.printA = function() &#123;</div><div class="line">	console.log(&apos;123&apos;);</div><div class="line">&#125;;</div><div class="line">a.printA();// 123 在A的原型上扩充了打印a的函数操作 a是基于A的原型 所以新创建的a 具有A的原型属性</div><div class="line">// a -&gt; A.prototype</div></pre></td></tr></table></figure>
+<p>2.置换原型：将要被继承的对象，直接替换掉原有的原型，实现继承</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function parent() &#123;</div><div class="line">	this.name = &apos;tom&apos;;</div><div class="line">&#125;</div><div class="line">parent.prototype.printC = function() &#123;</div><div class="line">	console.log(&apos;c&apos;);</div><div class="line">	console.log(this.name);</div><div class="line">&#125;;</div><div class="line">function child() &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">child.prototype = new parent;</div><div class="line">var c = new child;</div><div class="line">c.printC(); // c tom</div><div class="line">// c -&gt; parent实例（new parent） -&gt; parent.prototype</div><div class="line">var name = new child;</div><div class="line">var name = [1, 2, 3];</div><div class="line">console.log(typeof name);</div><div class="line">// 全局变量都是window对象的属性</div><div class="line">// window的name属性只能为字符串</div></pre></td></tr></table></figure>
+<h2 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h2><blockquote>
+<p>将指定对象上的所有成员拷贝一份，并添加到当前对象上。</p>
+</blockquote>
+<p><strong>动态特性：</strong>依次枚举每一个对象实例 然后添加给自身 有的话 顶替 没有的话 通过“.”和“[]”添加属性和方法。</p>
+<p><strong> 代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var parent = &#123;</div><div class="line">	print: function() &#123;			</div><div class="line">		console.log(&apos;i am &apos; + this.name);</div><div class="line">	&#125;,</div><div class="line">	name: &apos;parent&apos;</div><div class="line">&#125;;</div><div class="line">var child = &#123;</div><div class="line">	name: &apos;child&apos;</div><div class="line">&#125;;</div><div class="line">	// 1: 遍历parent</div><div class="line">	for (var k in parent) &#123;</div><div class="line">		// 2: 将parent对象上的成员添加到child上。</div><div class="line">		child[k] = parent[k];</div><div class="line">	&#125;</div><div class="line">	child.print();</div><div class="line">	var parent1 = &#123;</div><div class="line">		print1: function() &#123;</div><div class="line">			console.log(&apos;print1&apos;);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">	for (var k in parent1) &#123;</div><div class="line">		// 2: 将parent对象上的成员添加到child上。</div><div class="line">		child[k] = parent1[k];</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="extend方法的实现（封装）"><a href="#extend方法的实现（封装）" class="headerlink" title="extend方法的实现（封装）"></a>extend方法的实现（封装）</h3><blockquote>
+<p>为了方便实现拷贝继承</p>
+</blockquote>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"> 		// 1: 一次只能继承一个对象</div><div class="line"></div><div class="line">var child = &#123;&#125;;</div><div class="line">child.extend = function(parent) &#123;</div><div class="line">	var k;</div><div class="line">	for( k in parent )&#123;</div><div class="line">		this[k] = parent[k];</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">child.extend(&#123;</div><div class="line">	name: &apos;child&apos;,</div><div class="line">	print: function() &#123;</div><div class="line">		console.log(this.name);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">child.print();</div><div class="line"></div><div class="line"></div><div class="line">// 2: 一次实现继承多个对象</div><div class="line"></div><div class="line">child.extend = function() &#123;</div><div class="line">	var args = arguments,//简写arguments，方便代码书写</div><div class="line">		obj;</div><div class="line">// 遍历arguments上的所有对象，依次将遍历的每个对象的成员添加到child。</div><div class="line">for( var i = 0, l = args.length;i &lt; l; i++)&#123;</div><div class="line">	obj = args[i];//缓存当前实参数据、可以提高js解析性能</div><div class="line">	if( typeof obj === &apos;object&apos;)&#123;</div><div class="line">// 判断传入的是否为对象，不是对象就不执行下面代码</div><div class="line">		for( var k in obj )&#123;//枚举</div><div class="line">			this[k] = obj[k];//this代表调用者（child）</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&#125;;</div><div class="line">child.extend(&#123;</div><div class="line">	name: &apos;child&apos;</div><div class="line">&#125;, &#123;</div><div class="line">	print: function() &#123;</div><div class="line">		console.log(&apos;i am &apos; + this.name);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">child.print();</div></pre></td></tr></table></figure>
+<h2 id="对象冒充"><a href="#对象冒充" class="headerlink" title="对象冒充"></a>对象冒充</h2><blockquote>
+<p>在一个构造函数中，可以动态的添加一个parent方法，指向已有的构造函数，然后掉用parent方法去实例化当前对象的一部分成员（或全部成员）</p>
+</blockquote>
+<p><strong>注意</strong>：利用完parent属性之后，记得删除该属性</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function parent(name, age, gender) &#123;</div><div class="line">	this.name = name;</div><div class="line">	this.age = age;</div><div class="line">	this.gender = gender;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function child(name, age, gender, address) &#123;</div><div class="line">	this.parent = parent;</div><div class="line">	this.parent(name, age, gender);</div><div class="line">	delete this.parent;</div><div class="line">	this.address = address;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var  c = new child(&apos;xiaoming&apos;, 20, &apos;girl&apos;, &apos;china&apos;);</div><div class="line">console.log(c);</div></pre></td></tr></table></figure>
+<h2 id="ES5提供的一个Object-create"><a href="#ES5提供的一个Object-create" class="headerlink" title="ES5提供的一个Object.create"></a>ES5提供的一个Object.create</h2><blockquote>
+<p>通过置换原型的方式来实现继承</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 基于原型：置换原型</div><div class="line">		//Object.create(parent); 返回一个对象，并继承自parent</div><div class="line"></div><div class="line">		var obj = &#123;</div><div class="line">			name: &apos;tom&apos;,</div><div class="line">			print: function() &#123;</div><div class="line">				console.log(this.name);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line"></div><div class="line">		var newobj = Object.create(obj);</div><div class="line">		// newobj.__proto__.age = 18;</div><div class="line">		var newnewobj = Object.create(obj);</div><div class="line">		newobj.print();</div><div class="line">		console.log(newobj);</div><div class="line">		console.log(newnewobj);</div><div class="line">		兼容问题：</div><div class="line">		if( !Object.create )&#123;</div><div class="line">			Object.create = function(parent) &#123;</div><div class="line">				function F() &#123;&#125;</div><div class="line">				F.prototype = parent;</div><div class="line">				return new F;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		var newobj = Object.create(&#123;</div><div class="line">			name: &apos;tom&apos;,</div><div class="line">			print: function() &#123;</div><div class="line">				console.log(this.name);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		newobj.print();</div></pre></td></tr></table></figure>
+<h2 id="原型链的概念"><a href="#原型链的概念" class="headerlink" title="原型链的概念"></a>原型链的概念</h2><blockquote>
+<p>从当前对象到Object.prototype之间，存在一条层次分明，逐级递进的体现继承关系的链式结构</p>
+</blockquote>
+<p>1.几个默认</p>
+<ul>
+<li>所有对象都有<strong>prtotype</strong>属性，这个属性引用他的原型对象。</li>
+<li>原型对象继承自Object.prototype,具有constrctor属性；如果置换了原型，记得要添加constructor属性。</li>
+<li>只有函数具有prototype属性（除了Function.prototype）。</li>
+</ul>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var o = &#123;&#125;; // Object</div><div class="line">console.log(o.constructor === Object);</div><div class="line">// Object.prototype</div><div class="line">// __proto__</div><div class="line">console.log(o.__proto__);</div><div class="line">// o -&gt; Object.prototype -&gt; null</div><div class="line">console.log(o.__proto__.__proto__);</div><div class="line">console.log(Object.prototype.__proto__); // null</div><div class="line">// Object.prototype -&gt; null</div><div class="line">// Object对象的继承层次：</div><div class="line">// obj -&gt; Object.prototype -&gt; null</div></pre></td></tr></table></figure>
+<p>2.核心</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__ proto __</div></pre></td></tr></table></figure>
+<h2 id="属性搜索原型"><a href="#属性搜索原型" class="headerlink" title="属性搜索原型"></a>属性搜索原型</h2><p>当访问对象成员时，</p>
+<ul>
+<li>首先，在当前对象上查找constrctor，如果找到就直接返回（调用），停止查找;</li>
+<li>如果没有找到，就向其原型对象上查找；如果找到就直接返回（调用），停止查找;</li>
+<li>如果没有找到，就继续向原型对象的原型对象上查找，直到Object.prototype；</li>
+<li>如果找到，那么就直接返回（调用），并停止查找；否则返回undefined（报错：xxx is not a function）</li>
+</ul>
+<p><strong>注意：</strong></p>
+<ul>
+<li>如果访问对象的某个属性不存在的话，会搜索整个原型链。会导致js性能降低。</li>
+<li>在实际开发中，尽量保持一个适度的原型链长度。</li>
+<li>兼顾js性能以及代码的可读性可扩展性。</li>
+</ul>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function parent() &#123;</div><div class="line">	this.name = &apos;33&apos;;</div><div class="line">	this.age = 66;</div><div class="line">	this.gender = &apos;women&apos;;</div><div class="line">&#125;</div><div class="line">parent.prototype.address = &quot;china&quot;;</div><div class="line">parent.prototype.__proto__ = &#123;</div><div class="line">	gender: &apos;lady&apos;</div><div class="line">&#125;;</div><div class="line">var p = new parent;</div><div class="line">console.log(p.name); // 33</div><div class="line">console.log(p.address); // china</div><div class="line">console.log(p.gender); // lady</div></pre></td></tr></table></figure>
+<h2 id="Object-prototype介绍"><a href="#Object-prototype介绍" class="headerlink" title="Object.prototype介绍"></a>Object.prototype介绍</h2><p>1.hasOwnProperty()：判断当前对象的指定属性是否为自身的，而不是继承过来的；如果是本身的返回true；否则返回false。</p>
+<p> <strong>语法:</strong> hasOwnProperty(‘propName’)</p>
+<p>2.isPrototypeOf()：判断当前对象是否为指定对象的原型对象。</p>
+<p>如果是返回true；否则返回false。</p>
+<p>如果当前对象出现在指定对象的原型链上就返回true；否则返回false。</p>
+<p><strong>语法:</strong>  isPrototypeOf();</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function A() &#123;</div><div class="line"></div><div class="line">     &#125;</div><div class="line">     function B() &#123;</div><div class="line"></div><div class="line">     &#125;</div><div class="line">     var a = new A;</div><div class="line">     B.prototype = a;</div><div class="line">     var b = new B;</div><div class="line"></div><div class="line">     console.log(a.isPrototypeOf(b)); // false;</div><div class="line">     console.log( A.prototype.isPrototypeOf(b));</div><div class="line">     // b -&gt; a -&gt; A.prototype -&gt; Object.prototype -&gt; null</div><div class="line">     console.log(Object.prototype.isPrototypeOf(a));</div><div class="line">     console.log(Object.prototype.isPrototypeOf(b));</div></pre></td></tr></table></figure>
+<p>3.propertyIsEnumerable：即判断指定属性是否为自身的，并且该属性也是可枚举的。</p>
+<ul>
+<li><p>（可枚举？for in遍历出来的属性都是可枚举的。<br>默认：手动添加属性都是可枚举的，js解析器自动添加的都是不可枚举。）</p>
+<p>只有这两个条件都满足才返回true；否则返回false。</p>
+</li>
+</ul>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">	name: &apos;tom&apos;,</div><div class="line">	age: 18</div><div class="line">&#125;;</div><div class="line">for( var k in obj)&#123;</div><div class="line">	console.log(k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="构造函数的执行过程"><a href="#构造函数的执行过程" class="headerlink" title="构造函数的执行过程"></a>构造函数的执行过程</h3><blockquote>
+<p>为什么this指向当前的实例</p>
+</blockquote>
+<p>1：创建了一个空对象obj；</p>
+<p>2：将obj赋值给this（让this指向obj）</p>
+<p>3：将当前作用域交给this</p>
+<p>4：执行构造函数内部的代码</p>
+<p>5：将 this 返回。（return this;）</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Fn(name, age) &#123;</div><div class="line">	this.name = name;</div><div class="line">	this.age = age;			</div><div class="line">&#125;</div><div class="line">var fn = new Fn(&apos;tom&apos;, 18);</div><div class="line">console.log(fn);</div><div class="line">// 1: 创建了一个空对象obj；</div><div class="line">// 2：将obj赋值给this（让this指向obj）</div><div class="line">// 3：将当前作用域交给this</div><div class="line">// 4：执行构造函数内部的代码</div><div class="line">// 5：将 this 返回。（return this;）</div><div class="line">function Fn(name, age) &#123;</div><div class="line">	var obj = &#123;&#125;;</div><div class="line">	this = obj;</div><div class="line">//	Fn.call(this, name, age);</div><div class="line">	return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="绘制对象的原型链"><a href="#绘制对象的原型链" class="headerlink" title="绘制对象的原型链"></a>绘制对象的原型链</h2><p><strong>绘制规则：</strong></p>
+<p>1： 绘制出简化的原型链</p>
+<p>2： 先将上述简化的原型链上的每一个对象绘制在图形上。</p>
+<p>3：将每一个对象的默认属性添加上。</p>
+<p>4：给每一个对象的属性添加指向。</p>
+<p>5：如果每一个对象的属性都有了指向，说明原型链绘制完成。</p>
+<p><strong>思路：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// object对象</div><div class="line">var o = &#123;&#125;;</div><div class="line">// o -&gt; Object.prototype -&gt; null</div><div class="line">// 1: 先将上述简化的原型链上的每一个对象绘制在图形上。</div><div class="line">// 2：将每一个对象的默认属性添加上。</div><div class="line">// 3：给每一个对象的属性添加指向。</div><div class="line"></div><div class="line">// 数组对象</div><div class="line">var arr = [];</div><div class="line">// arr -&gt; Array.prototype -&gt; Object.prototype -&gt; null</div></pre></td></tr></table></figure>
+<h3 id="练习一"><a href="#练习一" class="headerlink" title="练习一"></a>练习一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function parent() &#123;&#125;</div><div class="line">var p = new parent;</div><div class="line">//p-&gt;parent.propotype-&gt;Object.prototype-&gt;null</div></pre></td></tr></table></figure>
+<p>如下图：<br><img src="作业1.jpg" alt=""></p>
+<h3 id="练习二"><a href="#练习二" class="headerlink" title="练习二"></a>练习二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function A() &#123;&#125;</div><div class="line">function B() &#123;&#125;</div><div class="line">B.prototype = new A;</div><div class="line">var b = new B;</div><div class="line">//b-&gt;B.prototype(new A)-&gt;A.prtotype-&gt;Object.prototype-&gt;null</div></pre></td></tr></table></figure>
+<p><img src="作业2.jpg" alt=""></p>
+</the></excerpt>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
