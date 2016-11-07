@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="徐 静">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="闭包"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Wellcome"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>闭包 - Wellcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>闭包</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-14
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <excerpt in="" index="" |="" 首页摘要="">
+
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote>
+<p>概念：指一个函数有权去访问另个函数内部数据。</p>
+</blockquote>
+<ul>
+<li>作用：解决在函数外部无法访问函数内部的数据。</li>
+</ul>
+<p><strong>☆ 缺点：</strong><br>    会造成函数内部的数据常驻内存，从而引发内存泄漏的问题。</p>
+<ul>
+<li>为了防止闭包导致内存泄漏，在使用完毕后，将其赋值为null即可。会被垃圾回收清除。    </li>
+</ul>
+<p>- 小例子：调用多次得到一样的随机数<br><img src="1.jpg" alt="闭包实现多次调用随机数"></p>
+<h2 id="垃圾回收机制-GC"><a href="#垃圾回收机制-GC" class="headerlink" title="垃圾回收机制 GC"></a>垃圾回收机制 GC</h2><blockquote>
+<p>无效的变量占用的内存销毁掉。</p>
+</blockquote>
+<ul>
+<li><p>引用计数：如果一个变量被另一个变量引用，那么该变量的引用技术+1 ；当这个变量不再引用该变量（该变量被回收掉）时，这个变量的引用技术-1；<br>GC会在一定时间间隔去查看每个变量的计数，如果为0，就将其占用的内存回收。</p>
+<ul>
+<li><p>缺点： 循环引用，a和b互相+1，无法回收。（早起ie使用该方法）<br>  <code>a{val:b},b{val:a}</code></p>
+<p><strong>☆</strong> 解决闭包内存泄漏： 手动定义 <code>b=null</code>或者<code>a=null</code></p>
+</li>
+</ul>
+</li>
+<li><p>计数（标记）清除法：</p>
+<ul>
+<li><p>原理上：从当前文档的根部（window对象）找一条路径，如果能到达该变量，说明此变量有被引用，不应该被回收，反之被回收其占用的内存。</p>
+</li>
+<li><p>形式上：如果变量进入某个执行环境。那么给其标记为“进入环境”；如果上述执行环境执行完成，被销毁，那么该环境内的所有变量都被标记为“已出环境”；如果变量被标记为已出环境，就会被回收。</p>
+<p>  所以有个变量常驻内存。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多闭包结构"><a href="#多闭包结构" class="headerlink" title="多闭包结构"></a>多闭包结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">	var n = 1, </div><div class="line">		m = &#123;age : 19&#125;;</div><div class="line">	function getN() &#123;</div><div class="line">		return n;</div><div class="line">	&#125;</div><div class="line">	function getM() &#123;</div><div class="line">		return m;</div><div class="line">	&#125;</div><div class="line">	var obj = &#123;&#125;;</div><div class="line">	obj.getM = getM;</div><div class="line">	obj.getN = getN;</div><div class="line">	return obj;</div><div class="line">	// return &#123;</div><div class="line">	// 		getM: getM,</div><div class="line">	// 		getN: getN</div><div class="line">	// &#125;</div><div class="line">&#125;</div><div class="line">var obj = foo();</div><div class="line">obj.getM().age = 20;</div><div class="line">console.log(obj.getM().age);</div><div class="line">console.log(obj.getN());</div><div class="line">var obj1 = foo();</div><div class="line">console.log(obj1.getM().age);</div><div class="line">console.log(obj1.getN());</div><div class="line">obj = null;</div><div class="line">obj1 = null;</div></pre></td></tr></table></figure>
+<h2 id="闭包应用——计数器"><a href="#闭包应用——计数器" class="headerlink" title="闭包应用——计数器"></a>闭包应用——计数器</h2><p>？怎么统计某个构造函数创建多少个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"></div><div class="line">   function Counter()&#123;</div><div class="line">     var n = 0;//初始化计时器 进入环境</div><div class="line">     return&#123;</div><div class="line">       add:function()&#123;</div><div class="line">         n++;//有引用n</div><div class="line">       &#125;,getCounts:function()&#123;</div><div class="line">         return n;//有引用n</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line">   var PersonCount = Counter();</div><div class="line">//外部环境有变量接收</div><div class="line">//创建一个独立的闭包环境</div><div class="line"></div><div class="line">var animalCount = Counter();</div><div class="line"></div><div class="line">   function Person()&#123;</div><div class="line">     PersonCount.add();</div><div class="line">   &#125;</div><div class="line">   var p0 = new Person();</div><div class="line">   var p1 = new Person();</div><div class="line">   var p2 = new Person();</div><div class="line">   var p3 = new Person();</div><div class="line">   var p4 = new Person();</div><div class="line"></div><div class="line">   console.log(PersonCount.getCounts());//5</div><div class="line">   </div><div class="line">   console.log(animalCount.getCounts());//0</div><div class="line"></div><div class="line">   &lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>？闭包为什么能缓存数据？</p>
+<p>因为函数内部有方法（函数）对其有引用，并且又将其返回到外部作用域上的一个变量接收。</p>
+<h2 id="对象的私有属性"><a href="#对象的私有属性" class="headerlink" title="对象的私有属性"></a>对象的私有属性</h2><p>阻止对象扩展<br>Object.preventExtensions();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">function person(name,age)&#123;</div><div class="line">	//工厂模式</div><div class="line">	//var obj =&#123;&#125;;</div><div class="line">	//obj.name = name;</div><div class="line">	//obj.age = age;</div><div class="line">	//return obj;</div><div class="line">	//闭包模拟私有属性</div><div class="line">	return &#123;</div><div class="line">		getName:function()&#123;</div><div class="line">			return name;</div><div class="line">		&#125;,</div><div class="line">		getAge:function()&#123;</div><div class="line">			return age;</div><div class="line">		&#125;,</div><div class="line">		setAge:function()&#123;</div><div class="line">			age = val;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var xiaohong = person(&apos;小红&apos;,18);</div><div class="line">console.log(xiaohong.getName());//小红</div><div class="line">console.log(xiaohong.getAge());//18</div><div class="line">Object.preventExtensions();</div><div class="line">xiaohong.name = &apos;小绿&apos;;</div><div class="line">console.log(xiaohong.getName());//小红</div><div class="line">console.log(xiaohong.name);//小绿</div></pre></td></tr></table></figure>
+<h2 id="闭包应用——沙箱模式"><a href="#闭包应用——沙箱模式" class="headerlink" title="闭包应用——沙箱模式"></a>闭包应用——沙箱模式</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1.能分割作用域，不会污染全局 fn<br>2.在分割后的作用域内部的代码要能自执行。 被调用fn().</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p><code>自执行的代码块</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;//代码块&#125;())</div></pre></td></tr></table></figure>
+<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p>不会污染全局变量（或者其他作用域的变量），并且能保证自己的代码安全执行。</p>
+</the></excerpt>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

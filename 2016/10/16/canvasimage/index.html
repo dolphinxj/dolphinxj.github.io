@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="徐 静">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="canvasimage"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Wellcome"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>canvasimage - Wellcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>canvasimage</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-16
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <excerpt in="" index="" |="" 首页摘要="">
+
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="CanvasImage"><a href="#CanvasImage" class="headerlink" title="CanvasImage"></a>CanvasImage</h2><h3 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h3><ul>
+<li><p>普通的渲染图像</p>
+<ul>
+<li>drawImage（imgobj,x,y）</li>
+<li>在canvas的（x,y）位置上，渲染指定的imgobj的图像</li>
+</ul>
+</li>
+<li><p>缩放绘制图像</p>
+<ul>
+<li>drawImage（imgobj,x,y,width,height）</li>
+<li>在canvas的（x,y）位置上，根据指定发宽和高，渲染指定的imgobj的图像</li>
+</ul>
+</li>
+<li><p>切片绘制图像</p>
+<ul>
+<li>drawImage（imgobj,sx,sy,swidth,sheight,x,y,width,height）</li>
+<li>sx,sy,swidth,sheight:在源图片上的sx、sy位置切片一个swidth宽、sheight高的图像。</li>
+<li>x,y,width,height：将上一步切出来的图像绘制在canvas的x，y位置上 ，并且指定渲染的宽和高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="坐标系变换"><a href="#坐标系变换" class="headerlink" title="坐标系变换"></a>坐标系变换</h3><ul>
+<li><p>平移坐标系<code>ctx.translate(x,y)</code></p>
+<ul>
+<li>将坐标系的原点平移到指定的(x,y)。</li>
+</ul>
+</li>
+<li><p>旋转坐标系<code>ctx.ratate(radian)</code></p>
+<ul>
+<li>以当前原点旋转坐标系到指定的弧度radian</li>
+<li>如果为正数 顺时针旋转，负数为逆时针旋转。</li>
+</ul>
+</li>
+</ul>
+<h3 id="清除画布"><a href="#清除画布" class="headerlink" title="清除画布"></a>清除画布</h3><p><code>ctx.clearRect(x,y,w,h)</code></p>
+<ul>
+<li>清楚由x,y,w,h确定的矩形内部所有的图形。</li>
+</ul>
+<p><strong>翻滚吧！小矩形！</strong></p>
+<p><img src="1.gif" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> &lt;script&gt;</div><div class="line">	function toAngle( radian ) &#123;</div><div class="line">		return 180 * radian / Math.PI;</div><div class="line">	&#125;</div><div class="line">	function toRadian( angle ) &#123;</div><div class="line">		return Math.PI * angle / 180;</div><div class="line">	&#125;</div><div class="line">	var canvas = document.getElementById(&apos;canvas&apos;),</div><div class="line">		ctx = canvas.getContext(&apos;2d&apos;);</div><div class="line">	var speed = 1;</div><div class="line">	ctx.translate(canvas.width / 2,	canvas.height / 2);</div><div class="line">	ctx.strokeRect(-50, -50, 100, 100);</div><div class="line">	var render = function() &#123;	</div><div class="line">		// ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);	</div><div class="line">		ctx.fillStyle = &apos;rgba(255, 255, 255, .1)&apos;;</div><div class="line">		ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);</div><div class="line">		ctx.rotate(toRadian(speed));</div><div class="line">		ctx.strokeRect(-50, -50, 100, 100);</div><div class="line">		window.requestAnimationFrame(render);</div><div class="line">	&#125;</div><div class="line">	window.requestAnimationFrame(render);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><strong>饼状图</strong></p>
+<p><img src="饼图.jpg" alt=""></p>
+<h3 id="状态保存与恢复"><a href="#状态保存与恢复" class="headerlink" title="状态保存与恢复"></a>状态保存与恢复</h3><ul>
+<li><code>ctx.sava()</code>将上一次的状态保存起来</li>
+<li><code>ctx.restore()</code>恢复最近一次保存的状态<br>  可以联想<code>栈结构</code>先进后出。</li>
+</ul>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><h3 id="canvas渲染问题"><a href="#canvas渲染问题" class="headerlink" title="canvas渲染问题"></a>canvas渲染问题</h3><ol>
+<li><p>在canvas中，渲染的最小单位1px。</p>
+</li>
+<li><p>如果指定线宽为奇数时，在渲染时实际线宽会大于指定的线宽。</p>
+</li>
+<li><p>在绘制斜线时，可能会出现锯齿现象。</p>
+</li>
+</ol>
+<h3 id="坐标系旋转"><a href="#坐标系旋转" class="headerlink" title="坐标系旋转"></a>坐标系旋转</h3><ol>
+<li><p>rotate方法可以根据用户传入的指定弧度，旋转坐标系。</p>
+</li>
+<li><p>意义：在绘制一些复杂的图形时，会变得很容易。</p>
+</li>
+</ol>
+<h3 id="绘制图像-1"><a href="#绘制图像-1" class="headerlink" title="绘制图像"></a>绘制图像</h3><ol>
+<li><p>普通渲染</p>
+</li>
+<li><p>缩放渲染</p>
+</li>
+<li><p>切片渲染</p>
+</li>
+</ol>
+<h3 id="拖尾的原理"><a href="#拖尾的原理" class="headerlink" title="拖尾的原理"></a>拖尾的原理</h3><ol>
+<li><p>原理：不再清除画布上所有的图形，而是已一定宽、高和透明度的矩形，去遮盖原图形，这样一层一层的遮盖。从而越早之前绘制图形，就越不清晰，直至看不到。而越晚绘制的图形，透明度越高，就越是清晰。这样就会有多种透明度的图形出现，因此而产生拖尾的效果。</p>
+</li>
+<li><p>注意：如果使用此方式创建拖尾效果，在绘制图形之前，要开启新路径。</p>
+</li>
+</ol>
+<h3 id="requestAnimationFrame介绍"><a href="#requestAnimationFrame介绍" class="headerlink" title="requestAnimationFrame介绍"></a>requestAnimationFrame介绍</h3><ol>
+<li><p>对比setTimeout</p>
+</li>
+<li><p>占用的资源比较少</p>
+</li>
+</ol>
+<h3 id="Rambler动画"><a href="#Rambler动画" class="headerlink" title="Rambler动画"></a>Rambler动画</h3><h3 id="课程案例动画"><a href="#课程案例动画" class="headerlink" title="课程案例动画"></a>课程案例动画</h3><ol>
+<li><p>动画属性确定</p>
+<ul>
+<li>绘制球体：<ul>
+<li>radius           球体半径</li>
+<li>position      球心位置</li>
+<li>border         球体的线宽</li>
+<li>borderColor    描边颜色</li>
+<li>fillClor        填充颜色</li>
+<li>title             文字</li>
+<li>font            文字大小</li>
+<li>angle            当前球体所在角度</li>
+</ul>
+</li>
+<li>用Object对象存储上述球体属性，也就说一个Object对象拥有这些属性，就代表为一个球体</li>
+<li>存储逻辑<ul>
+<li>[{out-ball1},{put-ball2}] 在同一数组内的球体，运功轨迹是一样的  外层各个球体</li>
+<li>[{inner-ball1},{inner-ball2}] 在同一数组内的球体，运功轨迹是一样的  内层各个球体</li>
+<li>动画的所有球体 {[{out-ball1},{put-ball2}], [{inner-ball1},{inner-ball2}]}</li>
+<li>{center-ball中心其他}</li>
+<li>{radius: 120, child:[{out-ball1},{out-ball2}]},<br>{radius: 170, child:[{inner-ball1},{inner-ball2}]}</li>
+<li>[{radius: 120, child:[{out-ball1},{out-ball2}]},<br>  {radius: 170, child:[{inner-ball1},{inner-ball2}]}]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>渲染函数</p>
+<ul>
+<li>创建计算球体位置函数</li>
+<li>创建渲染函数（渲染所有的球体）</li>
+<li>创建渲染单个球体的函数</li>
+</ul>
+</li>
+<li><p>状态函数</p>
+<ul>
+<li>更新 每个球体的angle以及position属性</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+<ul>
+<li>鼠标进入，动画旋转的速度 减低</li>
+<li>鼠标移出，恢复正常速度。</li>
+</ul>
+</li>
+<li><p>动画函数</p>
+<ul>
+<li>定时器实现动画</li>
+<li>每个一定时间间隔执行 状态函数和渲染函数</li>
+</ul>
+</li>
+</ol>
+<h3 id="基本动画"><a href="#基本动画" class="headerlink" title="基本动画"></a>基本动画</h3><ol>
+<li><p>确定动画所需属性</p>
+</li>
+<li><p>渲染函数</p>
+<ul>
+<li>只负责渲染，不进行动画状态的更新</li>
+</ul>
+</li>
+<li><p>状态函数</p>
+<ul>
+<li>只负责动画状态的维护</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+<ul>
+<li>实现和用户的交互</li>
+</ul>
+</li>
+<li><p>动画函数</p>
+<ul>
+<li>使用setInterval或requestAnimationFrame来实现动画</li>
+<li>每隔一定时间，执行状态函数 和 渲染函数</li>
+</ul>
+</li>
+<li><p>开始动画</p>
+</li>
+<li><p>停止动画</p>
+</li>
+</ol>
+</the></excerpt>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

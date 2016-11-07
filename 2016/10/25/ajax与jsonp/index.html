@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="徐 静">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="ajax"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Wellcome"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>ajax - Wellcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ajax</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <excerpt in="" index="" |="" 首页摘要="">
+
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<h1 id="Ajax-与-JSONP-的封装"><a href="#Ajax-与-JSONP-的封装" class="headerlink" title="Ajax 与 JSONP 的封装"></a>Ajax 与 JSONP 的封装</h1><h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><blockquote>
+<p>asynchronous javascript and xml</p>
+</blockquote>
+<h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><ol>
+<li>创建请求对象</li>
+<li><p>如果用户指定发送到服务器的数据，此时要格式化数据</p>
+<ul>
+<li>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;username:&apos;zhangsan&apos;,pwd:&apos;123321&apos;&#125; ==&gt; str = &apos;username=zhangsan&amp;pwd=123321&apos;</div><div class="line">    A:  url + &apos;?&apos; + str;</div><div class="line">    B:  send(str);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>调用<code>open</code>方法，与服务器建立连接</p>
+</li>
+<li><p>监听请求状态</p>
+</li>
+<li>发送请求</li>
+</ol>
+<h2 id="实行"><a href="#实行" class="headerlink" title="实行"></a>实行</h2><ol>
+<li><p>创建请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function creatRequest()&#123;</div><div class="line">    var xhr;</div><div class="line">    return window.XMLHTMLRequest ? new window.XMLHTMLRequest() : window.ActiveXObject(&apos;XMLHTTP&apos;);</div><div class="line">console.log(creatRequest());</div></pre></td></tr></table></figure>
+</li>
+<li><p>格式化数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//&#123; name:&apos;tom&apos;,age:18,gender:&apos;男&apos; &#125; ==&gt; name=tom&amp;age=18&amp;gender=男 </div><div class="line">funtion fornatData(data)&#123;</div><div class="line">    var k,</div><div class="line">        ret = [];</div><div class="line">    for(k in data)&#123;</div><div class="line">        ret.push(window.encodeURIComponent(k) + &apos;=&apos; + window.encodeURIComponent(data[k]));</div><div class="line">    &#125;  </div><div class="line">    //若每次都不想从服务器缓存读取数据 就需要伪造一个不同的url， 给url添加一个随机的参数</div><div class="line">    ret.push(&apos;_=&apos; + Math.random().replace(&apos;.&apos;,&apos;&apos;));</div><div class="line">    return ret.join(&apos;&amp;&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用open方法，与服务器建立连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var xhr = creatRequest();</div><div class="line">xhr.open(&apos;GET&apos;,&apos;data.json&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>监听状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    xhr.onreadystatechange = function()&#123;</div><div class="line">        if(xhr.readyState === 4)&#123;</div><div class="line">            if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status ===304)&#123;</div><div class="line">                document.querySelector(&apos;#list&apos;).innerHTML = xhr.responseText;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">------------</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div id=&apos;list&apos;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>发送请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="JSONP封装"><a href="#JSONP封装" class="headerlink" title="JSONP封装"></a>JSONP封装</h1><h2 id="一、原理："><a href="#一、原理：" class="headerlink" title="一、原理："></a>一、原理：</h2><p>利用<code>script</code>标签的<code>src</code>属性可以跨域请求资源。<br>    原因：请求回来的数据可以当作<code>js</code>代码来执行。</p>
+<h2 id="二、-发送JSONP请求流程"><a href="#二、-发送JSONP请求流程" class="headerlink" title="二、 发送JSONP请求流程"></a>二、 发送JSONP请求流程</h2><ol>
+<li>创建一个<code>script</code>标签<code>scriptElem</code></li>
+<li>将<code>scriptElem</code>添加到<code>head</code>标签下</li>
+<li>创建一个全局的回调函数<code>&#39;callback({});&#39;</code>,命名规则：<code>&#39;jsonp_&#39;+随机数</code><br> 将回调函数的名字添加到 发送到服务器的数据里边</li>
+<li>格式化数据</li>
+<li>将格式化的数据拼接到<code>url</code>上（jsonp只能发送get请求）</li>
+<li>设置超时时间，实现监听状态 </li>
+<li>发送请求 指定<code>scriptElem</code>的<code>src</code>属性</li>
+<li><code>script</code>标签以及回调函数在请求完成后没有作用了，移除掉。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line">    var AjaxSetting = &#123;</div><div class="line">        url: &apos;&apos;,</div><div class="line">        type:&apos;GET&apos;,</div><div class="line">        data: null,</div><div class="line">        async: true,</div><div class="line">        dataType: &apos;json&apos;,</div><div class="line">        timeout: null,</div><div class="line">        contentType: &apos;application/x-www-form-urlencoded&apos;</div><div class="line">    &#125;;</div><div class="line">    function formatData(data) &#123;</div><div class="line">        var k,</div><div class="line">            ret = [];</div><div class="line">        for(k in data)&#123;</div><div class="line">            ret.push(window.encodeURIComponent(k) + &apos;=&apos; +</div><div class="line">                    window.encodeURIComponent(data[k]));</div><div class="line">        &#125;</div><div class="line">        ret.push((&apos;_=&apos; + Math.random()).replace(&apos;.&apos;, &apos;&apos;));</div><div class="line">        return ret.join(&apos;&amp;&apos;);</div><div class="line">    &#125;</div><div class="line">    function Jsonp()&#123;</div><div class="line">        var context = &#123;&#125;,</div><div class="line">                scriptElem,</div><div class="line">                headElem,</div><div class="line">                callbackName;</div><div class="line"></div><div class="line">    //过滤无效参数</div><div class="line">    if(!options.url || !options.callback)&#123;</div><div class="line">        console.warn(&apos;参数异常&apos;);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    itcast.extend = itcast.fn.extend = function() &#123;</div><div class="line">            var k,</div><div class="line">                target,</div><div class="line">                len = arguments.length;</div><div class="line">            if (arguments.length === 1) &#123;</div><div class="line">                // 如果只传入一个参数，那么扩展对象为this</div><div class="line">                target = this;</div><div class="line">                len = 2; // 让下面的循环要执行一次</div><div class="line">            &#125; else &#123;</div><div class="line">                // 否则扩展对象为最后一个实参对象</div><div class="line">                target = arguments[len - 1];</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            for (var i = 0; i &lt; len - 1; i++) &#123;</div><div class="line">                for (k in arguments[i]) &#123;</div><div class="line">                    target[k] = arguments[i][k];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    itcast.extend(AjaxSetting, options, context);</div><div class="line"></div><div class="line">    //1</div><div class="line">    scriptElem = document.creatElement(&apos;script&apos;);</div><div class="line">    headElem = document.getElementsByTagName(&apos;head&apos;)[0];</div><div class="line"></div><div class="line">    //2</div><div class="line">    headElem.appendChild(scriptElem);</div><div class="line"></div><div class="line">    //3</div><div class="line">    callbackName = (&apos;jsonp_&apos; + Math.random()).replace(&apos;.&apos;,&apos;&apos;);</div><div class="line">    context.data = context.data || &#123;&#125;;</div><div class="line">    context.data[context.callback] = callbackName;</div><div class="line">    window[callbackName] = function(data)&#123;</div><div class="line"></div><div class="line">        headElem.removeChild(scriptElem);//清除</div><div class="line">        delete window[callbackName];</div><div class="line">        // 清除超时的延时函数</div><div class="line">        window.clearTimeout(scriptElem.timerId)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //4</div><div class="line">    context.data = formatData(context.data);</div><div class="line"></div><div class="line">    //5</div><div class="line">    context.url += &apos;?&apos; + context.data; //（get请求）</div><div class="line"></div><div class="line">    //6</div><div class="line">   if(context.timeout) &#123;</div><div class="line">    scriptElem.timerId = window.setTimeout(function()&#123;</div><div class="line">            //清除</div><div class="line">            headElem.removeChild(scriptElem);</div><div class="line">            delete window[callbackName];</div><div class="line">            context.fail &amp;&amp; context.fail(&#123;&quot;message&quot;: &quot;请求超时.&quot;&#125;);</div><div class="line">        &#125;,context.timeout);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   //7</div><div class="line">   scriptElem.src = context.url;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Jsonp(&#123;</div><div class="line">    url: &apos;&apos;,</div><div class="line">    data: &#123;&#125;,</div><div class="line">    dataType: &apos;jsonp&apos;,//是否为跨域请求，否则是ajax请求</div><div class="line">    callback: &apos;callback&apos;,</div><div class="line">    //回调函数的作用是：后台数据的拼接集合(callback=jsonp_+随机数)</div><div class="line">    success: function(data)&#123;</div><div class="line">        console.log(data);</div><div class="line">    &#125;,</div><div class="line">    timeout:1000;</div><div class="line">    fail: function(err) &#123;</div><div class="line">        console.log(err);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="js高级"><a href="#js高级" class="headerlink" title="js高级"></a>js高级</h1><ol>
+<li><p>原型的概念</p>
+<ul>
+<li>什么是原型？函数的prototype属性所引用的对象</li>
+<li>原型的本质是对象 当创建函数时 原型就同时产生 是早于对象的创建</li>
+<li>★ 四个特性<ul>
+<li>动态性<ul>
+<li>给原型扩展成员会直接反应到已创建的对象身上</li>
+<li>替换原型对象，不会反映到已创建出来的对象。但是会直接影响之后创建出来的对象。</li>
+</ul>
+</li>
+<li>唯一性<ul>
+<li>由同一函数创建出来的所有对象，共享同一个原型对象。</li>
+</ul>
+</li>
+<li>不可变型<ul>
+<li>对象是无法改变原型对象上的任何成员</li>
+</ul>
+</li>
+<li>继承（共享）性<ul>
+<li>所有对象都继承自它的原型对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何区分 <code>__prototype__</code> <code>prototype</code> <code>constructor</code><ul>
+<li>对象才有<code>__prototype__</code> 属性</li>
+<li><code>prototype</code> 的函数原型 <code>Function</code></li>
+<li><code>constructor</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>继承的概念</p>
+<ul>
+<li>指一个对象有权去访问两个对象上的成员</li>
+<li>好处： 实现代码复用</li>
+<li>实现继承的方式<ul>
+<li>★ 原型式：扩展原型 和 置换原型</li>
+<li>★ 拷贝继承（混入式）：利用拷贝一个对象上的所有成员添加到自身上 来实现继承</li>
+<li>对象冒充：</li>
+<li>借用构造函数：<ul>
+<li><code>call</code> <code>apply</code></li>
+</ul>
+</li>
+<li>★★ 组合继承：构造函数（私有元素）和原型（共有元素）</li>
+<li>寄生继承：</li>
+<li>组合寄生继承：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>构造函数执行过程</p>
+<ul>
+<li>执行函数体代码前 先创建一个空对象</li>
+<li>将当前作用域交给<code>this</code> 并且<code>this</code>指向上面创建的空对象 <strong>完善</strong>构造函数.call(null)</li>
+<li>开始执行 构造函数内部的代码块</li>
+<li>返回<code>this</code>.（默认有return this）</li>
+</ul>
+</li>
+<li><p>绘制原型链</p>
+</li>
+<li><p>词法作用域</p>
+<ul>
+<li>变量的作用域 是由变量的定义位置决定的 而不是变量使用的位置决定 只有函数限定作用域</li>
+<li>变量名提升 函数名提升 在JS预解析阶段执行 还做了词法分析 会报出语法错误 以下代码不执行</li>
+<li>只有函数可以限定作用域 在内部设定变量 外部不能访问 衍生出闭包</li>
+</ul>
+</li>
+<li><p>闭包 本质是函数 或者说是表达式</p>
+<ul>
+<li><p>概念：一个嵌套函数 函数内的变量能访问另个函数表达式</p>
+<ul>
+<li>指那些能够访问独立（自由）变量的函数（表达式）（变量在本地使用，但定义在一个封闭的作用域中）换句话说，这些函数可以‘记忆’它被创建时候的环境。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1;     //a为自由变量</div><div class="line">var o = &#123;a:1&#125;; //属性a为非自由变量 o是自由变量</div><div class="line">&lt;!-- 没有被调用 --&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>应用</p>
+<ul>
+<li>缓存数据</li>
+<li>私有属性</li>
+<li>沙箱模式</li>
+<li>提升递归性能</li>
+<li>柯里化应用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>★★ 函数四种调用模式</p>
+<ul>
+<li><code>this</code><ul>
+<li>非严格模式下 普通函数执行<ul>
+<li>this -&gt; window</li>
+</ul>
+</li>
+<li>方法模式<ul>
+<li>this -&gt; 方法调用者</li>
+</ul>
+</li>
+<li>构造函数模式<ul>
+<li>this -&gt; 创建的实例</li>
+</ul>
+</li>
+<li>apply / call（上下文模式）<ul>
+<li>this -&gt; 实现动态改变this指向 <ul>
+<li>数组合并</li>
+<li>借调方法</li>
+<li>原生内置方法 max </li>
+<li>改变<code>this</code></li>
+<li><h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>概念: H5 提供的一个新的标签元素。在它的上面可以绘制图形、图像以及制作动画等、<ul>
+<li>注意：本身canvas不具备绘图能力，只负责展示</li>
+</ul>
+</li>
+<li>基本使用<ul>
+<li>创建canvas 同时通过属性指定画布宽高</li>
+<li>不能用css样式来指定canvas的宽高，否则产生缩放</li>
+</ul>
+</li>
+<li><p>绘图的API方法</p>
+<ul>
+<li>moveTo(X,Y)</li>
+<li>lineTo(X,Y)</li>
+<li>描边 stroke()</li>
+<li>填充 fill()</li>
+<li>beginPath()</li>
+<li>closePath()<ul>
+<li>将图形闭合</li>
+<li>修复锯齿</li>
+</ul>
+</li>
+<li>strokeRect(x,y,w,h)</li>
+<li><p>fillRect(x,y,w,h)</p>
+</li>
+<li><p>arc(x,y,r,起始弧度，结束弧度，是否为逆时针，默认false顺时针)</p>
+</li>
+<li><p>arcTo(x1,y1,x2,y2,r)</p>
+</li>
+<li><p>strokeText(‘Text’,x,y,最大宽度)</p>
+</li>
+<li>fillText(‘Text’,x,y,最大宽度)</li>
+<li><p>measureText(‘文本’) 计算文本尺寸 返回对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">measureText(&apos;wenben&apos;).width;</div><div class="line">measureText(&apos;wenben&apos;).height;</div></pre></td></tr></table></figure>
+</li>
+<li><p>drawImage(imgobj,x,y)</p>
+</li>
+<li>drawImage(imgobj,x,y,w,h)</li>
+<li><p>drawImage(imgobj,sx,sy,sw,sh,x,y,w,h)</p>
+</li>
+<li><p>translate(x,y)</p>
+</li>
+<li>rotate(弧度) x y轴发生变化</li>
+<li><p>scale(‘0-1’,’0-1’) x y 轴缩放范围 0-1</p>
+</li>
+<li><p>save() 缓存上一次改变</p>
+</li>
+<li>restore() 就近找sava</li>
+</ul>
+</li>
+<li><p>绘图属性    </p>
+<ul>
+<li>lineWidth</li>
+<li>lineCap</li>
+<li>lineJoin</li>
+<li>strokeStyle</li>
+<li>fillStyle</li>
+<li>globalAlpha</li>
+</ul>
+</li>
+</ul>
+<h1 id="JS原生框架"><a href="#JS原生框架" class="headerlink" title="JS原生框架"></a>JS原生框架</h1><h2 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h2><ol>
+<li>沙箱模式<br> (function(){}())</li>
+<li><p>查询dom</p>
+<ul>
+<li>确定函数来查询dom元素，选择器查询</li>
+<li>外界无法访问函数内部 暴露在外部<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function(window)&#123;</div><div class="line">    function it(selector)&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    window.it = it;</div><div class="line">&#125;(window))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>操作dom</p>
+</li>
+</ol>
+<ul>
+<li><p>dom操作模块</p>
+<ul>
+<li>appendTo(target)先遍历this 遍历target </li>
+<li><p>append(source)</p>
+</li>
+<li><p>prependTo()</p>
+</li>
+<li><p>prepend()</p>
+</li>
+<li><p>remove()</p>
+</li>
+<li><p>empty()</p>
+</li>
+<li><p>next()</p>
+</li>
+<li>nextAll()</li>
+<li>prev()</li>
+<li>prevAll()</li>
+<li>before()</li>
+<li>after()</li>
+<li>parents()</li>
+<li>replacewith()改</li>
+</ul>
+</li>
+<li><p>css模块</p>
+<ul>
+<li>addClass</li>
+<li>removeClass</li>
+<li>toggleClass</li>
+<li>hasClass</li>
+</ul>
+</li>
+<li><p>attr 模块</p>
+<ul>
+<li>attr()</li>
+<li>prop()</li>
+<li>html()</li>
+<li>text()</li>
+<li>val()</li>
+</ul>
+</li>
+<li><p>Event 模块</p>
+<ul>
+<li>on</li>
+<li>off</li>
+<li>实现快捷方式</li>
+</ul>
+</li>
+<li><p>Ajax</p>
+</li>
+<li><p>Jsonp</p>
+</li>
+<li><p>组件</p>
+<ul>
+<li>构造函数结合<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#list&apos;).line();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</the></excerpt>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
