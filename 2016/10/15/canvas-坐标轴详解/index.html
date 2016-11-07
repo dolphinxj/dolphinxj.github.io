@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="徐 静">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="canvas 坐标轴详解--折线图"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Wellcome"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>canvas 坐标轴详解--折线图 - Wellcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>canvas 坐标轴详解--折线图</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-15
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <excerpt in="" index="" |="" 首页摘要="">
+
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="&#x6298;&#x7EBF;&#x56FE;"><a href="#&#x6298;&#x7EBF;&#x56FE;" class="headerlink" title="&#x6298;&#x7EBF;&#x56FE;"></a>&#x6298;&#x7EBF;&#x56FE;</h2><p><img src="/2016/10/15/canvas-&#x5750;&#x6807;&#x8F74;&#x8BE6;&#x89E3;/1.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	function Line(config) {</div><div class="line">		// &#x8FC7;&#x6EE4;&#x53C2;&#x6570;</div><div class="line">		if( !config.target || !config.data ){</div><div class="line">			console.warn(&apos;&#x53C2;&#x6570;&#x5F02;&#x5E38;.&apos;);</div><div class="line">			return this;</div><div class="line">		}</div><div class="line">		// &#x5C06;line&#x7684;&#x914D;&#x7F6E;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230; this &#x4E0A;&#xFF0C; &#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x3002;</div><div class="line">		this.target = config.target;</div><div class="line">		this.data = config.data;</div><div class="line">		// &#x5BF9;&#x539F;&#x6570;&#x636E;&#x6309;&#x7167;x&#x8FDB;&#x884C;&#x6392;&#x5E8F; - &#x5347;&#x5E8F;</div><div class="line">		this.data.sort(function(a, b) {</div><div class="line">			return a[0] - b[0];</div><div class="line">		});</div><div class="line">		this.width = config.width;</div><div class="line">		this.height = config.height;</div><div class="line">		// &#x5750;&#x6807;&#x8F74;&#x76F8;&#x5173;&#x914D;&#x7F6E;</div><div class="line">		this.axisWidth = config.axisWidth;</div><div class="line">		this.axisColor = config.axisColor;</div><div class="line">		this.arrowHeight = config.arrowHeight;</div><div class="line">		this.arrowWidth = config.arrowWidth;			</div><div class="line">		this.arrowColor = config.arrowColor;</div><div class="line">		this.axisMargin = config.axisMargin;</div><div class="line">		// &#x70B9;&#x76F8;&#x5173;&#x914D;&#x7F6E;</div><div class="line">		this.pointSize = config.pointSize;</div><div class="line">		this.pointColor = config.pointColor;</div><div class="line">		this.pointShape = config.pointShape;</div><div class="line">		// &#x7EBF;&#x76F8;&#x5173;&#x914D;&#x7F6E;</div><div class="line">		this.lineWidth = config.lineWidth;</div><div class="line">		this.lineColor = config.lineColor;</div><div class="line"></div><div class="line">		// &#x521B;&#x5EFA;canvas&#x6807;&#x7B7E;</div><div class="line">		var canvas = document.createElement(&apos;canvas&apos;);</div><div class="line">		canvas.width = this.width || 600;</div><div class="line">		canvas.height = this.height || 400;</div><div class="line">		// &#x5C06;&#x7ED8;&#x56FE;&#x5DE5;&#x5177;&#x4FDD;&#x5B58;&#x5728;this&#x4E0A;</div><div class="line">		this.context = canvas.getContext(&apos;2d&apos;);	</div><div class="line">		// &#x5B58;&#x50A8;&#x5750;&#x6807;&#x8F74;&#x7684;&#x6700;&#x5927;&#x503C;</div><div class="line">		this.maxXAxis = canvas.width - 2 * this.axisMargin - this.arrowHeight - this.pointSize;</div><div class="line">		this.maxYAxis = canvas.height - 2 * this.axisMargin - this.arrowHeight - this.pointSize;</div><div class="line">		// &#x5B58;&#x50A8;&#x6570;&#x636E;&#x4E2D;x&#x6700;&#x5927;&#x503C;</div><div class="line">		this.maxX = Math.max.apply(null, this.data.map(function(v) {</div><div class="line">			return v[0];</div><div class="line">		}));</div><div class="line">		// &#x5B58;&#x50A8;&#x6570;&#x636E;&#x4E2D;y&#x6700;&#x5927;&#x503C;</div><div class="line">		this.maxY = Math.max.apply(null, this.data.map(function(v) {</div><div class="line">			return v[1];</div><div class="line">		}));</div><div class="line">		this.points = [];</div><div class="line">	}</div><div class="line">	Line.prototype = {</div><div class="line">		constructor: Line,</div><div class="line">		renderAxis: function() {</div><div class="line">			var ctx = this.context;</div><div class="line">			var x, y;</div><div class="line">			ctx.beginPath();</div><div class="line">			x = y = this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);</div><div class="line">			y = this.height - this.axisMargin;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = this.width - this.axisMargin</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			ctx.strokeStyle = this.axisColor || &apos;hotpink&apos;;</div><div class="line">			ctx.lineWidth = this.axisWidth || 2;</div><div class="line">			ctx.stroke();</div><div class="line"></div><div class="line">			// &#x7ED8;&#x5236;y&#x8F74;&#x7BAD;&#x5934;</div><div class="line">			ctx.beginPath();</div><div class="line">			x = y = this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);</div><div class="line">			x = x - this.arrowWidth / 2;</div><div class="line">			y = y + this.arrowHeight;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = this.axisMargin;</div><div class="line">			y = this.axisMargin + this.arrowHeight / 2;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			x = x + this.arrowWidth / 2;</div><div class="line">			y = y + this.arrowHeight / 2;</div><div class="line">			ctx.lineTo(x, y);</div><div class="line">			ctx.fillStyle = this.arrowColor || &apos;hotpink&apos;;</div><div class="line">			ctx.fill();</div><div class="line">			</div><div class="line"></div><div class="line">			// &#x7ED8;&#x5236;x&#x8F74;&#x7BAD;&#x5934;</div><div class="line">			ctx.beginPath();</div><div class="line">			x = this.width - this.axisMargin;</div><div class="line">			y = this.height - this.axisMargin;</div><div class="line">			ctx.moveTo(x, y);		</div><div class="line">			x = x - this.arrowHeight;</div><div class="line">			y = y - this.arrowWidth / 2;				</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			x = x + this.arrowHeight / 2;</div><div class="line">			y = y + this.arrowWidth / 2;</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			x = x - this.arrowHeight / 2;</div><div class="line">			y = y + this.arrowWidth / 2;</div><div class="line">			ctx.lineTo(x, y);	</div><div class="line">			ctx.fill();</div><div class="line">		},</div><div class="line">		renderPoints: function() {</div><div class="line">			var ctx = this.context;</div><div class="line">			var x0, y0; // &#x786E;&#x5B9A;&#x5750;&#x6807;&#x7CFB;&#x539F;&#x70B9;</div><div class="line">			x0 = this.axisMargin;</div><div class="line">			y0 = this.height - this.axisMargin;</div><div class="line">			var point, x, y;</div><div class="line"></div><div class="line">			for(var i = 0, l = this.data.length; i &lt; l; i++){</div><div class="line">				point = this.data[i];</div><div class="line">				// &#x5750;&#x6807;&#x70B9;&#x7F29;&#x653E;</div><div class="line">				x = point[0] * this.maxXAxis / this.maxX;</div><div class="line">				y = point[1] * this.maxYAxis / this.maxY;</div><div class="line">				// &#x5750;&#x6807;&#x70B9;&#x53D8;&#x6362;</div><div class="line">				x = x0 + x;</div><div class="line">				y = y0 - y;</div><div class="line">				this.points.push([x, y]);</div><div class="line"></div><div class="line">				// &#x7528;&#x6307;&#x5B9A;&#x7684;&#x5F62;&#x72B6;&#x63CF;&#x7ED8;&#x70B9;</div><div class="line">				ctx.fillStyle = this.pointColor || &apos;hotpink&apos;;</div><div class="line">				if( this.pointShape === &apos;round&apos;){</div><div class="line">					ctx.beginPath();</div><div class="line">					ctx.arc(x, y, this.pointSize / 2, 0, 2 * Math.PI);</div><div class="line">					ctx.fill();</div><div class="line">				} else {</div><div class="line">					x = x - this.pointSize / 2;</div><div class="line">					y = y - this.pointSize / 2;</div><div class="line">					ctx.beginPath();						</div><div class="line">					ctx.fillRect(x, y, this.pointSize, this.pointSize);</div><div class="line">				}					</div><div class="line">			}</div><div class="line"></div><div class="line">		},</div><div class="line">		render: function() {</div><div class="line">			var point,</div><div class="line">				ctx = this.context;</div><div class="line">			this.renderAxis();</div><div class="line">			this.renderPoints();</div><div class="line">			// &#x5C06;&#x53D8;&#x6362;&#x540E;&#x7684;&#x70B9;&#xFF0C;&#x8FDB;&#x884C;&#x8FDE;&#x7EBF;</div><div class="line">			ctx.beginPath();</div><div class="line">			for(var i = 0,l = this.points.length; i &lt; l; i++){</div><div class="line">				point = this.points[i];					</div><div class="line">				ctx[[&apos;moveTo&apos;, &apos;lineTo&apos;][i === 0 ? 0 : 1]](point[0], point[1]);					</div><div class="line">			}</div><div class="line">			ctx.lineWidth = this.lineWidth || 2;</div><div class="line">			ctx.strokeStyle = this.lineColor || &apos;hotpink&apos;;</div><div class="line">			ctx.stroke();</div><div class="line">			document.querySelector(this.target).appendChild(this.context.canvas);</div><div class="line">		}</div><div class="line">	};</div><div class="line"></div><div class="line">	var l = new Line({</div><div class="line">		target: &apos;#chart&apos;, // &#x6307;&#x5B9A;canvas&#x7684;&#x7236;&#x8282;&#x70B9;</div><div class="line">		width: 600,		  // &#x6307;&#x5B9A;canvas&#x7684;&#x5BBD;</div><div class="line">		height: 400,      // &#x6307;&#x5B9A;canvas&#x7684;&#x9AD8;</div><div class="line">		data: [			  // &#x7ED8;&#x5236;&#x6298;&#x7EBF;&#x56FE;&#x7684;&#x6570;&#x636E;</div><div class="line">			[0, 10],</div><div class="line">			[10, 20],</div><div class="line">			[30, 45],</div><div class="line">			[15, 5],</div><div class="line">			[60, 80]</div><div class="line">		],</div><div class="line">		axisWidth: 2,    // &#x5750;&#x6807;&#x8F74;&#x7684;&#x7EBF;&#x5BBD;</div><div class="line">		axisColor: &apos;darkblue&apos;, // &#x5750;&#x6807;&#x8F74;&#x7684;&#x989C;&#x8272;</div><div class="line">		arrowHeight: 16,   // &#x5750;&#x6807;&#x8F74;&#x7BAD;&#x5934;&#x7684;&#x9AD8;</div><div class="line">		arrowWidth: 16,   // &#x5750;&#x6807;&#x8F74;&#x7BAD;&#x5934;&#x7684;&#x5BBD;</div><div class="line">		arrowColor: &apos;darkblue&apos;,  // &#x5750;&#x6807;&#x8F74;&#x7BAD;&#x5934;&#x7684;&#x586B;&#x5145;&#x989C;&#x8272;</div><div class="line">		axisMargin: 20,       // &#x5750;&#x6807;&#x8F74;&#x7684;&#x5916;&#x8FB9;&#x8DDD;</div><div class="line">		pointSize: 8,          // &#x70B9;&#x7684;&#x5927;&#x5C0F;</div><div class="line">		pointColor: &apos;darkred&apos;, // &#x70B9;&#x7684;&#x989C;&#x8272;</div><div class="line">		pointShape: &apos;round&apos;, // &apos;round | square&apos; // &#x70B9;&#x7684;&#x5F62;&#x72B6;&#xFF08;&#x5706;&#x6216;&#x65B9;&#x5F62;&#xFF09;</div><div class="line">		lineWidth: 2,          // &#x6298;&#x7EBF;&#x7684;&#x7EBF;&#x5BBD;</div><div class="line">		lineColor: &apos;darkblue&apos;  // &#x6298;&#x7EBF;&#x7684;&#x989C;&#x8272;</div><div class="line">	});</div><div class="line">	l.render();</div><div class="line">	// var o = {say: function() {}}</div><div class="line">	// o.say();</div><div class="line">	// o[&apos;say&apos;]();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</the></excerpt>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
