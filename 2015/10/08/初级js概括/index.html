@@ -15,17 +15,14 @@
 
 
 
-<meta name="description" content="+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初级js概括">
 <meta property="og:url" content="http://yoursite.com/2015/10/08/初级js概括/index.html">
 <meta property="og:site_name" content="Wellcome">
-<meta property="og:description" content="+">
 <meta property="og:image" content="http://yoursite.com/2015/10/08/初级js概括/01--调试器介绍.png">
-<meta property="og:updated_time" content="2016-11-08T15:40:23.079Z">
+<meta property="og:updated_time" content="2016-11-08T15:48:30.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初级js概括">
-<meta name="twitter:description" content="+">
 <meta name="twitter:image" content="http://yoursite.com/2015/10/08/初级js概括/01--调试器介绍.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -290,7 +287,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>+<a id="more"></a></excerpt></p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h3 id="JavaScript&#x7684;&#x5386;&#x53F2;"><a href="#JavaScript&#x7684;&#x5386;&#x53F2;" class="headerlink" title="JavaScript&#x7684;&#x5386;&#x53F2;"></a>JavaScript&#x7684;&#x5386;&#x53F2;</h3><p>liveScript -&gt; JavaScript -&gt;  JScript -&gt; ECMAScript</p>
@@ -610,8 +607,22 @@
 <script>
     // Open in New Window
     
-        $("a").attr("target", "_blank");
-        $("#scroll a, #toc a").removeAttr("target");
+        var oOpenInNew = {
+            
+            
+            
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
 </script>
 

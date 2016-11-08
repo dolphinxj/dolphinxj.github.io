@@ -772,7 +772,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><Excerpt in="" index="" |="" 首页摘要=""><br>+</Excerpt></p>
+              <p><Excerpt in="" index="" |="" 首页摘要=""><br></Excerpt></p>
           
       
     </div>
@@ -943,8 +943,22 @@
 <script>
     // Open in New Window
     
-        $("a").attr("target", "_blank");
-        $("#scroll a, #toc a").removeAttr("target");
+        var oOpenInNew = {
+            
+            
+            
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
     
 </script>
 
