@@ -19,7 +19,7 @@
 <meta property="og:title" content="ajax">
 <meta property="og:url" content="http://yoursite.com/2016/10/25/ajax与jsonp/index.html">
 <meta property="og:site_name" content="Wellcome">
-<meta property="og:updated_time" content="2016-11-07T11:54:26.120Z">
+<meta property="og:updated_time" content="2016-11-17T07:48:52.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax">
 
@@ -337,258 +337,6 @@
 <li><code>script</code>&#x6807;&#x7B7E;&#x4EE5;&#x53CA;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5728;&#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#x540E;&#x6CA1;&#x6709;&#x4F5C;&#x7528;&#x4E86;&#xFF0C;&#x79FB;&#x9664;&#x6389;&#x3002;</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line">    var AjaxSetting = {</div><div class="line">        url: &apos;&apos;,</div><div class="line">        type:&apos;GET&apos;,</div><div class="line">        data: null,</div><div class="line">        async: true,</div><div class="line">        dataType: &apos;json&apos;,</div><div class="line">        timeout: null,</div><div class="line">        contentType: &apos;application/x-www-form-urlencoded&apos;</div><div class="line">    };</div><div class="line">    function formatData(data) {</div><div class="line">        var k,</div><div class="line">            ret = [];</div><div class="line">        for(k in data){</div><div class="line">            ret.push(window.encodeURIComponent(k) + &apos;=&apos; +</div><div class="line">                    window.encodeURIComponent(data[k]));</div><div class="line">        }</div><div class="line">        ret.push((&apos;_=&apos; + Math.random()).replace(&apos;.&apos;, &apos;&apos;));</div><div class="line">        return ret.join(&apos;&amp;&apos;);</div><div class="line">    }</div><div class="line">    function Jsonp(){</div><div class="line">        var context = {},</div><div class="line">                scriptElem,</div><div class="line">                headElem,</div><div class="line">                callbackName;</div><div class="line"></div><div class="line">    //&#x8FC7;&#x6EE4;&#x65E0;&#x6548;&#x53C2;&#x6570;</div><div class="line">    if(!options.url || !options.callback){</div><div class="line">        console.warn(&apos;&#x53C2;&#x6570;&#x5F02;&#x5E38;&apos;);</div><div class="line">        return;</div><div class="line">    }</div><div class="line"></div><div class="line">    itcast.extend = itcast.fn.extend = function() {</div><div class="line">            var k,</div><div class="line">                target,</div><div class="line">                len = arguments.length;</div><div class="line">            if (arguments.length === 1) {</div><div class="line">                // &#x5982;&#x679C;&#x53EA;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#x4E3A;this</div><div class="line">                target = this;</div><div class="line">                len = 2; // &#x8BA9;&#x4E0B;&#x9762;&#x7684;&#x5FAA;&#x73AF;&#x8981;&#x6267;&#x884C;&#x4E00;&#x6B21;</div><div class="line">            } else {</div><div class="line">                // &#x5426;&#x5219;&#x6269;&#x5C55;&#x5BF9;&#x8C61;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B9E;&#x53C2;&#x5BF9;&#x8C61;</div><div class="line">                target = arguments[len - 1];</div><div class="line">            }</div><div class="line"></div><div class="line">            for (var i = 0; i &lt; len - 1; i++) {</div><div class="line">                for (k in arguments[i]) {</div><div class="line">                    target[k] = arguments[i][k];</div><div class="line">                }</div><div class="line">            }</div><div class="line">    };</div><div class="line"></div><div class="line">    itcast.extend(AjaxSetting, options, context);</div><div class="line"></div><div class="line">    //1</div><div class="line">    scriptElem = document.creatElement(&apos;script&apos;);</div><div class="line">    headElem = document.getElementsByTagName(&apos;head&apos;)[0];</div><div class="line"></div><div class="line">    //2</div><div class="line">    headElem.appendChild(scriptElem);</div><div class="line"></div><div class="line">    //3</div><div class="line">    callbackName = (&apos;jsonp_&apos; + Math.random()).replace(&apos;.&apos;,&apos;&apos;);</div><div class="line">    context.data = context.data || {};</div><div class="line">    context.data[context.callback] = callbackName;</div><div class="line">    window[callbackName] = function(data){</div><div class="line"></div><div class="line">        headElem.removeChild(scriptElem);//&#x6E05;&#x9664;</div><div class="line">        delete window[callbackName];</div><div class="line">        // &#x6E05;&#x9664;&#x8D85;&#x65F6;&#x7684;&#x5EF6;&#x65F6;&#x51FD;&#x6570;</div><div class="line">        window.clearTimeout(scriptElem.timerId)</div><div class="line">    }</div><div class="line"></div><div class="line">    //4</div><div class="line">    context.data = formatData(context.data);</div><div class="line"></div><div class="line">    //5</div><div class="line">    context.url += &apos;?&apos; + context.data; //&#xFF08;get&#x8BF7;&#x6C42;&#xFF09;</div><div class="line"></div><div class="line">    //6</div><div class="line">   if(context.timeout) {</div><div class="line">    scriptElem.timerId = window.setTimeout(function(){</div><div class="line">            //&#x6E05;&#x9664;</div><div class="line">            headElem.removeChild(scriptElem);</div><div class="line">            delete window[callbackName];</div><div class="line">            context.fail &amp;&amp; context.fail({&quot;message&quot;: &quot;&#x8BF7;&#x6C42;&#x8D85;&#x65F6;.&quot;});</div><div class="line">        },context.timeout);</div><div class="line">   }</div><div class="line"></div><div class="line">   //7</div><div class="line">   scriptElem.src = context.url;</div><div class="line">}</div><div class="line"></div><div class="line">Jsonp({</div><div class="line">    url: &apos;&apos;,</div><div class="line">    data: {},</div><div class="line">    dataType: &apos;jsonp&apos;,//&#x662F;&#x5426;&#x4E3A;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#xFF0C;&#x5426;&#x5219;&#x662F;ajax&#x8BF7;&#x6C42;</div><div class="line">    callback: &apos;callback&apos;,</div><div class="line">    //&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF1A;&#x540E;&#x53F0;&#x6570;&#x636E;&#x7684;&#x62FC;&#x63A5;&#x96C6;&#x5408;(callback=jsonp_+&#x968F;&#x673A;&#x6570;)</div><div class="line">    success: function(data){</div><div class="line">        console.log(data);</div><div class="line">    },</div><div class="line">    timeout:1000;</div><div class="line">    fail: function(err) {</div><div class="line">        console.log(err);</div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure>
-<h1 id="js&#x9AD8;&#x7EA7;"><a href="#js&#x9AD8;&#x7EA7;" class="headerlink" title="js&#x9AD8;&#x7EA7;"></a>js&#x9AD8;&#x7EA7;</h1><ol>
-<li><p>&#x539F;&#x578B;&#x7684;&#x6982;&#x5FF5;</p>
-<ul>
-<li>&#x4EC0;&#x4E48;&#x662F;&#x539F;&#x578B;&#xFF1F;&#x51FD;&#x6570;&#x7684;prototype&#x5C5E;&#x6027;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
-<li>&#x539F;&#x578B;&#x7684;&#x672C;&#x8D28;&#x662F;&#x5BF9;&#x8C61; &#x5F53;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#x65F6; &#x539F;&#x578B;&#x5C31;&#x540C;&#x65F6;&#x4EA7;&#x751F; &#x662F;&#x65E9;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;</li>
-<li>&#x2605; &#x56DB;&#x4E2A;&#x7279;&#x6027;<ul>
-<li>&#x52A8;&#x6001;&#x6027;<ul>
-<li>&#x7ED9;&#x539F;&#x578B;&#x6269;&#x5C55;&#x6210;&#x5458;&#x4F1A;&#x76F4;&#x63A5;&#x53CD;&#x5E94;&#x5230;&#x5DF2;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x8EAB;&#x4E0A;</li>
-<li>&#x66FF;&#x6362;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x4F1A;&#x53CD;&#x6620;&#x5230;&#x5DF2;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4F46;&#x662F;&#x4F1A;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x4E4B;&#x540E;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
-</ul>
-</li>
-<li>&#x552F;&#x4E00;&#x6027;<ul>
-<li>&#x7531;&#x540C;&#x4E00;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#xFF0C;&#x5171;&#x4EAB;&#x540C;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x3002;</li>
-</ul>
-</li>
-<li>&#x4E0D;&#x53EF;&#x53D8;&#x578B;<ul>
-<li>&#x5BF9;&#x8C61;&#x662F;&#x65E0;&#x6CD5;&#x6539;&#x53D8;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x6210;&#x5458;</li>
-</ul>
-</li>
-<li>&#x7EE7;&#x627F;&#xFF08;&#x5171;&#x4EAB;&#xFF09;&#x6027;<ul>
-<li>&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x7EE7;&#x627F;&#x81EA;&#x5B83;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&#x5982;&#x4F55;&#x533A;&#x5206; <code>__prototype__</code> <code>prototype</code> <code>constructor</code><ul>
-<li>&#x5BF9;&#x8C61;&#x624D;&#x6709;<code>__prototype__</code> &#x5C5E;&#x6027;</li>
-<li><code>prototype</code> &#x7684;&#x51FD;&#x6570;&#x539F;&#x578B; <code>Function</code></li>
-<li><code>constructor</code> </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x7EE7;&#x627F;&#x7684;&#x6982;&#x5FF5;</p>
-<ul>
-<li>&#x6307;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6709;&#x6743;&#x53BB;&#x8BBF;&#x95EE;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x6210;&#x5458;</li>
-<li>&#x597D;&#x5904;&#xFF1A; &#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x590D;&#x7528;</li>
-<li>&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;<ul>
-<li>&#x2605; &#x539F;&#x578B;&#x5F0F;&#xFF1A;&#x6269;&#x5C55;&#x539F;&#x578B; &#x548C; &#x7F6E;&#x6362;&#x539F;&#x578B;</li>
-<li>&#x2605; &#x62F7;&#x8D1D;&#x7EE7;&#x627F;&#xFF08;&#x6DF7;&#x5165;&#x5F0F;&#xFF09;&#xFF1A;&#x5229;&#x7528;&#x62F7;&#x8D1D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x6DFB;&#x52A0;&#x5230;&#x81EA;&#x8EAB;&#x4E0A; &#x6765;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;</li>
-<li>&#x5BF9;&#x8C61;&#x5192;&#x5145;&#xFF1A;</li>
-<li>&#x501F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;<ul>
-<li><code>call</code> <code>apply</code></li>
-</ul>
-</li>
-<li>&#x2605;&#x2605; &#x7EC4;&#x5408;&#x7EE7;&#x627F;&#xFF1A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x79C1;&#x6709;&#x5143;&#x7D20;&#xFF09;&#x548C;&#x539F;&#x578B;&#xFF08;&#x5171;&#x6709;&#x5143;&#x7D20;&#xFF09;</li>
-<li>&#x5BC4;&#x751F;&#x7EE7;&#x627F;&#xFF1A;</li>
-<li>&#x7EC4;&#x5408;&#x5BC4;&#x751F;&#x7EE7;&#x627F;&#xFF1A;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x6267;&#x884C;&#x8FC7;&#x7A0B;</p>
-<ul>
-<li>&#x6267;&#x884C;&#x51FD;&#x6570;&#x4F53;&#x4EE3;&#x7801;&#x524D; &#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;</li>
-<li>&#x5C06;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#x4EA4;&#x7ED9;<code>this</code> &#x5E76;&#x4E14;<code>this</code>&#x6307;&#x5411;&#x4E0A;&#x9762;&#x521B;&#x5EFA;&#x7684;&#x7A7A;&#x5BF9;&#x8C61; <strong>&#x5B8C;&#x5584;</strong>&#x6784;&#x9020;&#x51FD;&#x6570;.call(null)</li>
-<li>&#x5F00;&#x59CB;&#x6267;&#x884C; &#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;&#x5757;</li>
-<li>&#x8FD4;&#x56DE;<code>this</code>.&#xFF08;&#x9ED8;&#x8BA4;&#x6709;return this&#xFF09;</li>
-</ul>
-</li>
-<li><p>&#x7ED8;&#x5236;&#x539F;&#x578B;&#x94FE;</p>
-</li>
-<li><p>&#x8BCD;&#x6CD5;&#x4F5C;&#x7528;&#x57DF;</p>
-<ul>
-<li>&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF; &#x662F;&#x7531;&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#x4F4D;&#x7F6E;&#x51B3;&#x5B9A;&#x7684; &#x800C;&#x4E0D;&#x662F;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#x51B3;&#x5B9A; &#x53EA;&#x6709;&#x51FD;&#x6570;&#x9650;&#x5B9A;&#x4F5C;&#x7528;&#x57DF;</li>
-<li>&#x53D8;&#x91CF;&#x540D;&#x63D0;&#x5347; &#x51FD;&#x6570;&#x540D;&#x63D0;&#x5347; &#x5728;JS&#x9884;&#x89E3;&#x6790;&#x9636;&#x6BB5;&#x6267;&#x884C; &#x8FD8;&#x505A;&#x4E86;&#x8BCD;&#x6CD5;&#x5206;&#x6790; &#x4F1A;&#x62A5;&#x51FA;&#x8BED;&#x6CD5;&#x9519;&#x8BEF; &#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x4E0D;&#x6267;&#x884C;</li>
-<li>&#x53EA;&#x6709;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x9650;&#x5B9A;&#x4F5C;&#x7528;&#x57DF; &#x5728;&#x5185;&#x90E8;&#x8BBE;&#x5B9A;&#x53D8;&#x91CF; &#x5916;&#x90E8;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE; &#x884D;&#x751F;&#x51FA;&#x95ED;&#x5305;</li>
-</ul>
-</li>
-<li><p>&#x95ED;&#x5305; &#x672C;&#x8D28;&#x662F;&#x51FD;&#x6570; &#x6216;&#x8005;&#x8BF4;&#x662F;&#x8868;&#x8FBE;&#x5F0F;</p>
-<ul>
-<li><p>&#x6982;&#x5FF5;&#xFF1A;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x51FD;&#x6570; &#x51FD;&#x6570;&#x5185;&#x7684;&#x53D8;&#x91CF;&#x80FD;&#x8BBF;&#x95EE;&#x53E6;&#x4E2A;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;</p>
-<ul>
-<li>&#x6307;&#x90A3;&#x4E9B;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x72EC;&#x7ACB;&#xFF08;&#x81EA;&#x7531;&#xFF09;&#x53D8;&#x91CF;&#x7684;&#x51FD;&#x6570;&#xFF08;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#xFF08;&#x53D8;&#x91CF;&#x5728;&#x672C;&#x5730;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x5B9A;&#x4E49;&#x5728;&#x4E00;&#x4E2A;&#x5C01;&#x95ED;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#xFF09;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x2018;&#x8BB0;&#x5FC6;&#x2019;&#x5B83;&#x88AB;&#x521B;&#x5EFA;&#x65F6;&#x5019;&#x7684;&#x73AF;&#x5883;&#x3002;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 1;     //a&#x4E3A;&#x81EA;&#x7531;&#x53D8;&#x91CF;</div><div class="line">var o = {a:1}; //&#x5C5E;&#x6027;a&#x4E3A;&#x975E;&#x81EA;&#x7531;&#x53D8;&#x91CF; o&#x662F;&#x81EA;&#x7531;&#x53D8;&#x91CF;</div><div class="line">&lt;!-- &#x6CA1;&#x6709;&#x88AB;&#x8C03;&#x7528; --&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>&#x5E94;&#x7528;</p>
-<ul>
-<li>&#x7F13;&#x5B58;&#x6570;&#x636E;</li>
-<li>&#x79C1;&#x6709;&#x5C5E;&#x6027;</li>
-<li>&#x6C99;&#x7BB1;&#x6A21;&#x5F0F;</li>
-<li>&#x63D0;&#x5347;&#x9012;&#x5F52;&#x6027;&#x80FD;</li>
-<li>&#x67EF;&#x91CC;&#x5316;&#x5E94;&#x7528;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x2605;&#x2605; &#x51FD;&#x6570;&#x56DB;&#x79CD;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</p>
-<ul>
-<li><code>this</code><ul>
-<li>&#x975E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B; &#x666E;&#x901A;&#x51FD;&#x6570;&#x6267;&#x884C;<ul>
-<li>this -&gt; window</li>
-</ul>
-</li>
-<li>&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;<ul>
-<li>this -&gt; &#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8005;</li>
-</ul>
-</li>
-<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#x6A21;&#x5F0F;<ul>
-<li>this -&gt; &#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;</li>
-</ul>
-</li>
-<li>apply / call&#xFF08;&#x4E0A;&#x4E0B;&#x6587;&#x6A21;&#x5F0F;&#xFF09;<ul>
-<li>this -&gt; &#x5B9E;&#x73B0;&#x52A8;&#x6001;&#x6539;&#x53D8;this&#x6307;&#x5411; <ul>
-<li>&#x6570;&#x7EC4;&#x5408;&#x5E76;</li>
-<li>&#x501F;&#x8C03;&#x65B9;&#x6CD5;</li>
-<li>&#x539F;&#x751F;&#x5185;&#x7F6E;&#x65B9;&#x6CD5; max </li>
-<li>&#x6539;&#x53D8;<code>this</code></li>
-<li><h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>&#x6982;&#x5FF5;: H5 &#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6807;&#x7B7E;&#x5143;&#x7D20;&#x3002;&#x5728;&#x5B83;&#x7684;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x7ED8;&#x5236;&#x56FE;&#x5F62;&#x3001;&#x56FE;&#x50CF;&#x4EE5;&#x53CA;&#x5236;&#x4F5C;&#x52A8;&#x753B;&#x7B49;&#x3001;<ul>
-<li>&#x6CE8;&#x610F;&#xFF1A;&#x672C;&#x8EAB;canvas&#x4E0D;&#x5177;&#x5907;&#x7ED8;&#x56FE;&#x80FD;&#x529B;&#xFF0C;&#x53EA;&#x8D1F;&#x8D23;&#x5C55;&#x793A;</li>
-</ul>
-</li>
-<li>&#x57FA;&#x672C;&#x4F7F;&#x7528;<ul>
-<li>&#x521B;&#x5EFA;canvas &#x540C;&#x65F6;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x753B;&#x5E03;&#x5BBD;&#x9AD8;</li>
-<li>&#x4E0D;&#x80FD;&#x7528;css&#x6837;&#x5F0F;&#x6765;&#x6307;&#x5B9A;canvas&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5426;&#x5219;&#x4EA7;&#x751F;&#x7F29;&#x653E;</li>
-</ul>
-</li>
-<li><p>&#x7ED8;&#x56FE;&#x7684;API&#x65B9;&#x6CD5;</p>
-<ul>
-<li>moveTo(X,Y)</li>
-<li>lineTo(X,Y)</li>
-<li>&#x63CF;&#x8FB9; stroke()</li>
-<li>&#x586B;&#x5145; fill()</li>
-<li>beginPath()</li>
-<li>closePath()<ul>
-<li>&#x5C06;&#x56FE;&#x5F62;&#x95ED;&#x5408;</li>
-<li>&#x4FEE;&#x590D;&#x952F;&#x9F7F;</li>
-</ul>
-</li>
-<li>strokeRect(x,y,w,h)</li>
-<li><p>fillRect(x,y,w,h)</p>
-</li>
-<li><p>arc(x,y,r,&#x8D77;&#x59CB;&#x5F27;&#x5EA6;&#xFF0C;&#x7ED3;&#x675F;&#x5F27;&#x5EA6;&#xFF0C;&#x662F;&#x5426;&#x4E3A;&#x9006;&#x65F6;&#x9488;&#xFF0C;&#x9ED8;&#x8BA4;false&#x987A;&#x65F6;&#x9488;)</p>
-</li>
-<li><p>arcTo(x1,y1,x2,y2,r)</p>
-</li>
-<li><p>strokeText(&#x2018;Text&#x2019;,x,y,&#x6700;&#x5927;&#x5BBD;&#x5EA6;)</p>
-</li>
-<li>fillText(&#x2018;Text&#x2019;,x,y,&#x6700;&#x5927;&#x5BBD;&#x5EA6;)</li>
-<li><p>measureText(&#x2018;&#x6587;&#x672C;&#x2019;) &#x8BA1;&#x7B97;&#x6587;&#x672C;&#x5C3A;&#x5BF8; &#x8FD4;&#x56DE;&#x5BF9;&#x8C61;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">measureText(&apos;wenben&apos;).width;</div><div class="line">measureText(&apos;wenben&apos;).height;</div></pre></td></tr></table></figure>
-</li>
-<li><p>drawImage(imgobj,x,y)</p>
-</li>
-<li>drawImage(imgobj,x,y,w,h)</li>
-<li><p>drawImage(imgobj,sx,sy,sw,sh,x,y,w,h)</p>
-</li>
-<li><p>translate(x,y)</p>
-</li>
-<li>rotate(&#x5F27;&#x5EA6;) x y&#x8F74;&#x53D1;&#x751F;&#x53D8;&#x5316;</li>
-<li><p>scale(&#x2018;0-1&#x2019;,&#x2019;0-1&#x2019;) x y &#x8F74;&#x7F29;&#x653E;&#x8303;&#x56F4; 0-1</p>
-</li>
-<li><p>save() &#x7F13;&#x5B58;&#x4E0A;&#x4E00;&#x6B21;&#x6539;&#x53D8;</p>
-</li>
-<li>restore() &#x5C31;&#x8FD1;&#x627E;sava</li>
-</ul>
-</li>
-<li><p>&#x7ED8;&#x56FE;&#x5C5E;&#x6027;    </p>
-<ul>
-<li>lineWidth</li>
-<li>lineCap</li>
-<li>lineJoin</li>
-<li>strokeStyle</li>
-<li>fillStyle</li>
-<li>globalAlpha</li>
-</ul>
-</li>
-</ul>
-<h1 id="JS&#x539F;&#x751F;&#x6846;&#x67B6;"><a href="#JS&#x539F;&#x751F;&#x6846;&#x67B6;" class="headerlink" title="JS&#x539F;&#x751F;&#x6846;&#x67B6;"></a>JS&#x539F;&#x751F;&#x6846;&#x67B6;</h1><h2 id="&#x6846;&#x67B6;&#x7ED3;&#x6784;"><a href="#&#x6846;&#x67B6;&#x7ED3;&#x6784;" class="headerlink" title="&#x6846;&#x67B6;&#x7ED3;&#x6784;"></a>&#x6846;&#x67B6;&#x7ED3;&#x6784;</h2><ol>
-<li>&#x6C99;&#x7BB1;&#x6A21;&#x5F0F;<br> (function(){}())</li>
-<li><p>&#x67E5;&#x8BE2;dom</p>
-<ul>
-<li>&#x786E;&#x5B9A;&#x51FD;&#x6570;&#x6765;&#x67E5;&#x8BE2;dom&#x5143;&#x7D20;&#xFF0C;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x8BE2;</li>
-<li>&#x5916;&#x754C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x5185;&#x90E8; &#x66B4;&#x9732;&#x5728;&#x5916;&#x90E8;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function(window){</div><div class="line">    function it(selector){</div><div class="line"></div><div class="line">    }</div><div class="line">    window.it = it;</div><div class="line">}(window))</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>&#x64CD;&#x4F5C;dom</p>
-</li>
-</ol>
-<ul>
-<li><p>dom&#x64CD;&#x4F5C;&#x6A21;&#x5757;</p>
-<ul>
-<li>appendTo(target)&#x5148;&#x904D;&#x5386;this &#x904D;&#x5386;target </li>
-<li><p>append(source)</p>
-</li>
-<li><p>prependTo()</p>
-</li>
-<li><p>prepend()</p>
-</li>
-<li><p>remove()</p>
-</li>
-<li><p>empty()</p>
-</li>
-<li><p>next()</p>
-</li>
-<li>nextAll()</li>
-<li>prev()</li>
-<li>prevAll()</li>
-<li>before()</li>
-<li>after()</li>
-<li>parents()</li>
-<li>replacewith()&#x6539;</li>
-</ul>
-</li>
-<li><p>css&#x6A21;&#x5757;</p>
-<ul>
-<li>addClass</li>
-<li>removeClass</li>
-<li>toggleClass</li>
-<li>hasClass</li>
-</ul>
-</li>
-<li><p>attr &#x6A21;&#x5757;</p>
-<ul>
-<li>attr()</li>
-<li>prop()</li>
-<li>html()</li>
-<li>text()</li>
-<li>val()</li>
-</ul>
-</li>
-<li><p>Event &#x6A21;&#x5757;</p>
-<ul>
-<li>on</li>
-<li>off</li>
-<li>&#x5B9E;&#x73B0;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</li>
-</ul>
-</li>
-<li><p>Ajax</p>
-</li>
-<li><p>Jsonp</p>
-</li>
-<li><p>&#x7EC4;&#x4EF6;</p>
-<ul>
-<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#x7ED3;&#x5408;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#list&apos;).line();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
 </the></excerpt>
       
     </div>
@@ -621,7 +369,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax-与-JSONP-的封装"><span class="toc-number">1.</span> <span class="toc-text">Ajax 与 JSONP 的封装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax"><span class="toc-number">2.</span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程："><span class="toc-number">2.1.</span> <span class="toc-text">流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实行"><span class="toc-number">2.2.</span> <span class="toc-text">实行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSONP封装"><span class="toc-number">3.</span> <span class="toc-text">JSONP封装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、原理："><span class="toc-number">3.1.</span> <span class="toc-text">一、原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、-发送JSONP请求流程"><span class="toc-number">3.2.</span> <span class="toc-text">二、 发送JSONP请求流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#js高级"><span class="toc-number">4.</span> <span class="toc-text">js高级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Canvas"><span class="toc-number">5.</span> <span class="toc-text">Canvas</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS原生框架"><span class="toc-number">6.</span> <span class="toc-text">JS原生框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#框架结构"><span class="toc-number">6.1.</span> <span class="toc-text">框架结构</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax-与-JSONP-的封装"><span class="toc-number">1.</span> <span class="toc-text">Ajax 与 JSONP 的封装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax"><span class="toc-number">2.</span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程："><span class="toc-number">2.1.</span> <span class="toc-text">流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实行"><span class="toc-number">2.2.</span> <span class="toc-text">实行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSONP封装"><span class="toc-number">3.</span> <span class="toc-text">JSONP封装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、原理："><span class="toc-number">3.1.</span> <span class="toc-text">一、原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、-发送JSONP请求流程"><span class="toc-number">3.2.</span> <span class="toc-text">二、 发送JSONP请求流程</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -691,7 +439,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/node/">node</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/31/angularJS/">angularJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/30/github/">github</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/28/git/">git</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/26/响应式布局/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/ajax与jsonp/">ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/小知识点集合/">小知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/19/框架-jQuery/">框架-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/16/canvasimage/">canvasimage</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/canvas-坐标轴详解/">canvas 坐标轴详解--折线图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/canvas/">Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/柯里化/">柯里化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/闭包-1/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/函数的创建方式/">函数的创建方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/函数的四种调用模式/">函数的四种调用模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/继承的实现方式-1/">继承的实现方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/29/数组练习题集/">数组练习题集</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/19/学校报名流程/">学校报名流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/js高级知识点集合/">js高级知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/08/初级js概括/">初级js概括</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/面向对象的三大特性/">面向对象的三大特性</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/有趣的前端面试题/">有趣的前端面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/http服务器的概念/">http服务器的概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/ES6/">ES6</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/IO/">非阻塞IO模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/异步/index/">异步/index</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/异步/">异步</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/node/">node</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/31/angularJS/">angularJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/30/github/">github</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/28/git/">git</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/26/响应式布局/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/ajax与jsonp/">ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/小知识点集合/">小知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/19/框架-jQuery/">框架-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/16/canvasimage/">canvasimage</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/canvas-坐标轴详解/">canvas 坐标轴详解--折线图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/canvas/">Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/柯里化/">柯里化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/闭包-1/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/函数的创建方式/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/函数的四种调用模式/">函数的四种调用模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/继承的实现方式-1/">继承的实现方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/29/数组练习题集/">数组练习题集</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/19/学校报名流程/">学校报名流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/js高级知识点集合/">js高级知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/08/初级js概括/">初级js概括</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/面向对象的三大特性/">面向对象的三大特性</a></li></ul>
 
 
 

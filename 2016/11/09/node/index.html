@@ -19,7 +19,7 @@
 <meta property="og:title" content="node">
 <meta property="og:url" content="http://yoursite.com/2016/11/09/node/index.html">
 <meta property="og:site_name" content="Wellcome">
-<meta property="og:updated_time" content="2016-11-09T11:51:55.010Z">
+<meta property="og:updated_time" content="2016-11-15T01:51:48.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node">
 
@@ -421,12 +421,32 @@
 <li>console &#x6253;&#x5370;</li>
 <li>&#x2605; __dirname  &#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#x540D;&#xFF09;</li>
 <li>&#x2605; __filename  &#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</li>
-<li>Buffer &#x662F;&#x4E00;&#x4E2A;&#x7C7B; <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var buf= new Buffer(&apos;abc&apos;)</div><div class="line">console.log(buf.toString())</div></pre></td></tr></table></figure>
+<li>Buffer &#x662F;&#x4E00;&#x4E2A;&#x7C7B; <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> buf= <span class="keyword">new</span> Buffer(<span class="string">&apos;abc&apos;</span>)</div><div class="line"><span class="built_in">console</span>.log(buf.toString())</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="&#x533A;&#x5206;&#x5168;&#x5C40;&#x548C;&#x4F2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;"><a href="#&#x533A;&#x5206;&#x5168;&#x5C40;&#x548C;&#x4F2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;" class="headerlink" title="&#x533A;&#x5206;&#x5168;&#x5C40;&#x548C;&#x4F2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;"></a>&#x533A;&#x5206;&#x5168;&#x5C40;&#x548C;&#x4F2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;</h3><p>&#x4F2A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#xFF08;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x503C;&#x4E0D;&#x4E00;&#x6837;&#xFF09;<br>Buffer require exports module  <strong>dirname </strong>filename</p>
 <p>&#x771F;&#x5168;&#x5C40;<br>console process &#xFF08;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B; pid&#xFF09;</p>
-<h3 id="&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;"><a href="#&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;" class="headerlink" title="&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;"></a>&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;</h3><h3 id="nodejs&#x4E2D;&#x7684;3M"><a href="#nodejs&#x4E2D;&#x7684;3M" class="headerlink" title="nodejs&#x4E2D;&#x7684;3M"></a>nodejs&#x4E2D;&#x7684;3M</h3><p> NVM &#x7BA1;&#x7406;nodejs &#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;<br> NPM &#x7B2C;&#x4E09;&#x65B9;&#x8D44;&#x6E90;&#x5E93;<br> NRM &#x8F85;&#x52A9;NPM &#x5207;&#x6362;NPM&#x7684;&#x6E90;</p>
+<h4 id="process&#x7684;&#x51FD;&#x6570;"><a href="#process&#x7684;&#x51FD;&#x6570;" class="headerlink" title="process&#x7684;&#x51FD;&#x6570;"></a>process&#x7684;&#x51FD;&#x6570;</h4><ul>
+<li>process&#x7684;&#x5C5E;&#x6027;<ul>
+<li>pid/argv/env</li>
+</ul>
+</li>
+<li>process&#x7684;&#x51FD;&#x6570;<ul>
+<li>&#x6740;&#x6765;&#x6740;&#x53BB;<ul>
+<li>&#x4E24;&#x4E2A;&#x662F;&#x81EA;&#x5C3D;&#xFF1A;abort/exit</li>
+<li>&#x6740;&#x624B;&#xFF1A;kill</li>
+</ul>
+</li>
+<li>process.nextTick() //&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#xFF0C;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x53C2;&#x6570;</li>
+</ul>
+</li>
+<li>process.std<ul>
+<li>stdin/out/err</li>
+<li>stdin readline&#x5305;&#x88C5;stdin&#x76D1;&#x89C6;&#x952E;&#x76D8;&#x5F55;&#x5165;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;"><a href="#&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;" class="headerlink" title="&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;"></a>&#x6A21;&#x5757;&#x4F5C;&#x7528;&#x57DF;</h3><h3 id="nodejs&#x4E2D;&#x7684;3M"><a href="#nodejs&#x4E2D;&#x7684;3M" class="headerlink" title="nodejs&#x4E2D;&#x7684;3M"></a>nodejs&#x4E2D;&#x7684;3M</h3><p> NVM &#x7BA1;&#x7406;nodejs &#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;<br> NPM &#x7B2C;&#x4E09;&#x65B9;&#x8D44;&#x6E90;&#x5E93;<br> NRM &#x8F85;&#x52A9; NPM &#x5207;&#x6362;NPM&#x7684;&#x955C;&#x50CF;&#x6E90;</p>
 <h3 id="NVM"><a href="#NVM" class="headerlink" title="NVM"></a>NVM</h3><ul>
 <li>&#x9996;&#x5148;&#x5378;&#x8F7D;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5378;&#x8F7D;&#x4F1A;&#x628A;&#x5F53;&#x524D;&#x7684;&#x7248;&#x672C;&#x7ED9;NVM&#x63A7;&#x5236;</li>
 <li>&#x5B89;&#x88C5;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#xFF1A;<ul>
@@ -446,6 +466,52 @@
 <li>&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x5728;&#x7535;&#x8111;&#x5C5E;&#x6027;&#x4FEE;&#x6539;&#x73AF;&#x5883;&#x53D8;&#x91CF; path&#x503C;</li>
 <li>&#x91CD;&#x542F;&#x547D;&#x4EE4;&#x884C;</li>
 </ul>
+<h3 id="node&#x52A0;&#x8F7D;&#x673A;&#x5236;"><a href="#node&#x52A0;&#x8F7D;&#x673A;&#x5236;" class="headerlink" title="node&#x52A0;&#x8F7D;&#x673A;&#x5236;"></a>node&#x52A0;&#x8F7D;&#x673A;&#x5236;</h3><ul>
+<li>package.json &#x2013;&gt;main&#x5C5E;&#x6027;</li>
+<li>&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;cal.js/json.node</li>
+<li>&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;cal&#x76EE;&#x5F55;&#x4E0B;&#x7684;index.js</li>
+<li>&#x5305;&#x7684;&#x52A0;&#x8F7D;&#xFF1A;&#x9010;&#x7EA7;&#x5411;&#x4E0A;&#x67E5;&#x627E;nide_modules&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x76F4;&#x5230;&#x76D8;&#x7B26;&#x6839;&#x76EE;&#x5F55;&#x7684;nide_modules</li>
+</ul>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><ul>
+<li>&#x4E00;&#x65B9;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x4EAB;&#x7F51;&#x7AD9;&#xFF0C;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</li>
+<li>&#x5E38;&#x7528;&#x547D;&#x4EE4;<ul>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;</li>
+<li>&#x521D;&#x59CB;&#x5316;package.json&#x6587;&#x4EF6; npm init[-y]</li>
+<li>&#x5B89;&#x88C5;&#x5305; npm install(i) jquery bootstrap express &#x2013;save-dev<ul>
+<li>&#x2013;save&#x90AE;&#x7BB1;&#x7740;dependices&#x7684;&#x4F9D;&#x8D56; &#x2013;save-dev &#x5F71;&#x54CD;&#x7740;devDependices</li>
+<li>npm install &#x2013;production &#x6307;&#x5F15;&#x7740;&#x6062;&#x590D; dependcies&#x91CC;&#x9762;&#x7684;&#x4F9D;&#x8D56;&#x9879;</li>
+<li>npm install &#x6062;&#x590D;dependices&#x548C;devDependices&#x7684;&#x5168;&#x90E8;&#x4F9D;&#x8D56;</li>
+</ul>
+</li>
+<li>npm uninstall &#x5305;&#x540D;  &#xFF08;package.json&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4F9D;&#x8D56;&#x6CA1;&#x6709;&#x88AB;&#x5220;&#x9664;&#xFF09;<ul>
+<li>npm uninstall &#x5305;&#x540D; &#x2013;save-dev  &#x5220;&#x9664;&#x5BF9;&#x5E94;&#x9879;&#x4F9D;&#x8D56;</li>
+</ul>
+</li>
+<li>npm docs &#x5305;&#x540D;  &#x81EA;&#x52A8;&#x5F39;&#x51FA;&#x5305;&#x540D;&#x7684;&#x7F51;&#x7AD9;</li>
+</ul>
+</li>
+</ul>
+<h3 id="npm&#x88AB;&#x5899;&#x89E3;&#x51B3;"><a href="#npm&#x88AB;&#x5899;&#x89E3;&#x51B3;" class="headerlink" title="npm&#x88AB;&#x5899;&#x89E3;&#x51B3;"></a>npm&#x88AB;&#x5899;&#x89E3;&#x51B3;</h3><ul>
+<li>npm&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x7684;&#x8D44;&#x6E90;</li>
+<li>npm install &#x5305;&#x540D; &#x2013;registery http://.. </li>
+</ul>
+<h3 id="NRM"><a href="#NRM" class="headerlink" title="NRM"></a>NRM</h3><ul>
+<li>&#x5B89;&#x88C5;NRM </li>
+<li>&#x5B89;&#x88C5; npm install -g nrm</li>
+<li>nrm    &#x67E5;&#x770B;&#x547D;&#x4EE4;</li>
+<li>nrm ls   &#x67E5;&#x770B;&#x955C;&#x50CF;&#x6E90;&#x4FE1;&#x606F; *&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x6E90;</li>
+<li>nrm use &#x6E90;&#x540D;&#x79F0;   &#x5207;&#x6362;&#x6E90;</li>
+<li>&#x6DFB;&#x52A0;&#x955C;&#x50CF;&#x6E90;&#xFF1A;nrm add &#x6E90;&#x540D;&#x79F0; &#x6E90;&#x5730;&#x5740;</li>
+<li>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6E90;&#xFF1A;nrm del &#x6E90;&#x540D;&#x79F0; &#x6E90;&#x5730;&#x5740;</li>
+<li>&#x770B;&#x7684;&#x5230;nrm&#x7684;&#x6E90;&#x6539;&#x53D8; &#x770B;&#x4E0D;&#x5230;npm&#x7684;&#x5B89;&#x88C5;&#x6539;&#x53D8;</li>
+<li>&#x5F53;&#x5207;&#x6362;nrm&#x955C;&#x50CF;&#x6E90;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;nrmls&#x4E2D;*&#x7684;&#x4F4D;&#x7F6E;&#x53D8;&#x4E86;</li>
+<li>nrm&#x4E0B;&#x8F7D;&#x65F6;&#xFF0C;&#x8BF7;&#x6C42;&#x7684;&#x6E90;&#x4E5F;&#x53D8;&#x4E86;</li>
+</ul>
+<h3 id="&#x603B;&#x7ED3;&#xFF1A;&#x5168;&#x5C40;&#x4E0E;&#x9879;&#x76EE;&#x73AF;&#x5883;&#x4F7F;&#x7528;"><a href="#&#x603B;&#x7ED3;&#xFF1A;&#x5168;&#x5C40;&#x4E0E;&#x9879;&#x76EE;&#x73AF;&#x5883;&#x4F7F;&#x7528;" class="headerlink" title="&#x603B;&#x7ED3;&#xFF1A;&#x5168;&#x5C40;&#x4E0E;&#x9879;&#x76EE;&#x73AF;&#x5883;&#x4F7F;&#x7528;"></a>&#x603B;&#x7ED3;&#xFF1A;&#x5168;&#x5C40;&#x4E0E;&#x9879;&#x76EE;&#x73AF;&#x5883;&#x4F7F;&#x7528;</h3><ul>
+<li>gulp browser-sync</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x5305;&#x7684;&#x540D;&#x79F0;&#x6765;&#x4F7F;&#x7528;&#x7684;&#x4E1C;&#x897F; =&gt; &#x5168;&#x5C40;&#x5B89;&#x88C5;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;require(&#x2018;&#x5305;&#x540D;&#x2019;)  =&gt;  &#x9879;&#x76EE;&#x4E2D;&#x5B89;&#x88C5;</li>
+</ul>
 </the></excerpt>
       
     </div>
@@ -458,8 +524,8 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/11/09/H5/">
-                    H5
+                <a href="/2016/11/12/异步/">
+                    异步
                 </a>
             </div>
         
@@ -478,7 +544,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-和-nodejs-在运行环境的区别"><span class="toc-number">1.</span> <span class="toc-text">javascript 和 nodejs 在运行环境的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JavaScript的运行环境是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.JavaScript的运行环境是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-浏览器中-javascript-可以做什么？不可以做什么？"><span class="toc-number">1.2.</span> <span class="toc-text">2.浏览器中 javascript 可以做什么？不可以做什么？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome浏览器的实现结构"><span class="toc-number">2.</span> <span class="toc-text">Chrome浏览器的实现结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node的实现结构"><span class="toc-number">3.</span> <span class="toc-text">node的实现结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何区分nodejs和浏览器环境？"><span class="toc-number">3.1.</span> <span class="toc-text">如何区分nodejs和浏览器环境？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是node？"><span class="toc-number"></span> <span class="toc-text">什么是node？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs可以做什么？"><span class="toc-number">1.</span> <span class="toc-text">nodejs可以做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs和php有什么区别"><span class="toc-number">2.</span> <span class="toc-text">nodejs和php有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用node的企业类型"><span class="toc-number">3.</span> <span class="toc-text">使用node的企业类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node应用场景"><span class="toc-number">4.</span> <span class="toc-text">node应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#那天猫怎么使用nodejs？"><span class="toc-number">5.</span> <span class="toc-text">那天猫怎么使用nodejs？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD路径"><span class="toc-number"></span> <span class="toc-text">CMD路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行基本命令"><span class="toc-number"></span> <span class="toc-text">命令行基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工作中，服务器查看"><span class="toc-number">1.</span> <span class="toc-text">工作中，服务器查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合键补充"><span class="toc-number">2.</span> <span class="toc-text">组合键补充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REPL-Read-eval-print-loop-环境操作"><span class="toc-number">4.</span> <span class="toc-text">REPL(Read-eval-print-loop)环境操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global对象类别及作用域"><span class="toc-number">5.</span> <span class="toc-text">Global对象类别及作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区分全局和伪全局对象"><span class="toc-number">6.</span> <span class="toc-text">区分全局和伪全局对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块作用域"><span class="toc-number">7.</span> <span class="toc-text">模块作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs中的3M"><span class="toc-number">8.</span> <span class="toc-text">nodejs中的3M</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NVM"><span class="toc-number">9.</span> <span class="toc-text">NVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvm绿色版"><span class="toc-number">10.</span> <span class="toc-text">nvm绿色版</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-和-nodejs-在运行环境的区别"><span class="toc-number">1.</span> <span class="toc-text">javascript 和 nodejs 在运行环境的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JavaScript的运行环境是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.JavaScript的运行环境是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-浏览器中-javascript-可以做什么？不可以做什么？"><span class="toc-number">1.2.</span> <span class="toc-text">2.浏览器中 javascript 可以做什么？不可以做什么？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chrome浏览器的实现结构"><span class="toc-number">2.</span> <span class="toc-text">Chrome浏览器的实现结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node的实现结构"><span class="toc-number">3.</span> <span class="toc-text">node的实现结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何区分nodejs和浏览器环境？"><span class="toc-number">3.1.</span> <span class="toc-text">如何区分nodejs和浏览器环境？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是node？"><span class="toc-number"></span> <span class="toc-text">什么是node？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs可以做什么？"><span class="toc-number">1.</span> <span class="toc-text">nodejs可以做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs和php有什么区别"><span class="toc-number">2.</span> <span class="toc-text">nodejs和php有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用node的企业类型"><span class="toc-number">3.</span> <span class="toc-text">使用node的企业类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node应用场景"><span class="toc-number">4.</span> <span class="toc-text">node应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#那天猫怎么使用nodejs？"><span class="toc-number">5.</span> <span class="toc-text">那天猫怎么使用nodejs？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD路径"><span class="toc-number"></span> <span class="toc-text">CMD路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行基本命令"><span class="toc-number"></span> <span class="toc-text">命令行基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工作中，服务器查看"><span class="toc-number">1.</span> <span class="toc-text">工作中，服务器查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合键补充"><span class="toc-number">2.</span> <span class="toc-text">组合键补充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REPL-Read-eval-print-loop-环境操作"><span class="toc-number">4.</span> <span class="toc-text">REPL(Read-eval-print-loop)环境操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global对象类别及作用域"><span class="toc-number">5.</span> <span class="toc-text">Global对象类别及作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区分全局和伪全局对象"><span class="toc-number">6.</span> <span class="toc-text">区分全局和伪全局对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#process的函数"><span class="toc-number">6.1.</span> <span class="toc-text">process的函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块作用域"><span class="toc-number">7.</span> <span class="toc-text">模块作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs中的3M"><span class="toc-number">8.</span> <span class="toc-text">nodejs中的3M</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NVM"><span class="toc-number">9.</span> <span class="toc-text">NVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvm绿色版"><span class="toc-number">10.</span> <span class="toc-text">nvm绿色版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node加载机制"><span class="toc-number">11.</span> <span class="toc-text">node加载机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">12.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm被墙解决"><span class="toc-number">13.</span> <span class="toc-text">npm被墙解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NRM"><span class="toc-number">14.</span> <span class="toc-text">NRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结：全局与项目环境使用"><span class="toc-number">15.</span> <span class="toc-text">总结：全局与项目环境使用</span></a></li></ol>
         
     </div>
     <style>
@@ -534,7 +600,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/09/H5/" title="上一篇: H5">
+            <a href="/2016/11/12/异步/" title="上一篇: 异步">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -548,7 +614,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/node/">node</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/31/angularJS/">angularJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/30/github/">github</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/28/git/">git</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/26/响应式布局/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/ajax与jsonp/">ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/小知识点集合/">小知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/19/框架-jQuery/">框架-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/16/canvasimage/">canvasimage</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/canvas-坐标轴详解/">canvas 坐标轴详解--折线图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/canvas/">Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/柯里化/">柯里化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/闭包-1/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/函数的创建方式/">函数的创建方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/函数的四种调用模式/">函数的四种调用模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/继承的实现方式-1/">继承的实现方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/29/数组练习题集/">数组练习题集</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/19/学校报名流程/">学校报名流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/js高级知识点集合/">js高级知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/08/初级js概括/">初级js概括</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/面向对象的三大特性/">面向对象的三大特性</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/有趣的前端面试题/">有趣的前端面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/http服务器的概念/">http服务器的概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/ES6/">ES6</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/IO/">非阻塞IO模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/异步/index/">异步/index</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/12/异步/">异步</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/node/">node</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/31/angularJS/">angularJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/30/github/">github</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/28/git/">git</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/26/响应式布局/">响应式布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/ajax与jsonp/">ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/小知识点集合/">小知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/19/框架-jQuery/">框架-jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/16/canvasimage/">canvasimage</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/canvas-坐标轴详解/">canvas 坐标轴详解--折线图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/canvas/">Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/柯里化/">柯里化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/闭包-1/">闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/函数的创建方式/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/函数的四种调用模式/">函数的四种调用模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/继承的实现方式-1/">继承的实现方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/29/数组练习题集/">数组练习题集</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/19/学校报名流程/">学校报名流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/js高级知识点集合/">js高级知识点集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/09/H5/">H5</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/08/初级js概括/">初级js概括</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/面向对象的三大特性/">面向对象的三大特性</a></li></ul>
 
 
 
